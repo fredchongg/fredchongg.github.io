@@ -20,7 +20,7 @@ header {
     border-radius: 8px;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
@@ -93,19 +93,18 @@ header p {
     justify-content: center;
     margin: 20px auto;
     max-width: 1000px;
+    gap: 20px; /* Add gap between content */
 }
 
 .content {
     width: 500px;
     height: 500px;
-    margin-right: 20px;
 }
 
 .imgg {
     width: 100%;
     height: 508px;
     border-radius: 10px;
-
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
@@ -144,4 +143,97 @@ footer {
     font-size: 0.9rem;
     margin-top: auto;
     border-top: 3px solid #6a11cb;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+
+    /* Header */
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Team section */
+    #about {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .team-member {
+        width: 80%;
+        height: auto;
+    }
+
+    .team-member img {
+        max-width: 150px;
+        height: 150px;
+    }
+
+    .team-member h3 {
+        font-size: 1rem;
+    }
+
+    .team-member p {
+        font-size: 0.8rem;
+    }
+
+    /* Main content */
+    .mainContent {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content,
+    .subContent {
+        width: 100%;
+        margin: 0;
+    }
+
+    .imgg {
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+/* Extra Mobile Adjustments (for very small screens) */
+@media only screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .team-member {
+        width: 90%;
+        height: auto;
+    }
+
+    .team-member img {
+        max-width: 130px;
+        height: 130px;
+    }
+
+    .team-member h3 {
+        font-size: 0.9rem;
+    }
+
+    .team-member p {
+        font-size: 0.7rem;
+    }
+
+    .subContent h1 {
+        font-size: 1.5rem;
+    }
 }
