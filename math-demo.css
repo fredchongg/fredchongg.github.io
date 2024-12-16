@@ -22,6 +22,7 @@ header {
 
 h2 {
     text-align: center;
+    font-size: 30px;
 }
 
 header h1 {
@@ -38,6 +39,7 @@ header p {
 
 /* Team section */
 #about {
+    
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
@@ -88,12 +90,11 @@ header p {
 }
 
 /* Main Content */
-.mainContent {
+#mainContent {
     display: flex;
     justify-content: center;
     margin: 20px auto;
-    max-width: 1000px;
-    gap: 20px; /* Add gap between content */
+    gap: 20px; 
 }
 
 .content {
@@ -114,7 +115,8 @@ header p {
 }
 
 .subContent {
-    width: 500px;
+    width: 800px;
+    height: 465px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -122,14 +124,14 @@ header p {
 }
 
 .subContent h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
     margin-bottom: 15px;
     font-weight: bold;
 }
 
 .ePDE {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     color: #555;
 }
