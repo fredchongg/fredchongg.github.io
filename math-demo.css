@@ -103,6 +103,8 @@ header p {
 
 .content {
     height: 100%;
+    witdh: 500px;
+    max-width: 90%;
 }
 
 .imgg {
