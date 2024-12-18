@@ -288,3 +288,87 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Header */
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Slightly larger for better visibility */
+    }
+
+    header p {
+        font-size: 1.1rem; /* Adjusted for medium-sized screens */
+    }
+
+    /* Team section */
+    #about {
+        flex-wrap: wrap; /* Ensure wrapping for better alignment */
+        gap: 40px; /* Adjust gap */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .team-member {
+        width: 250px; /* Adjust width */
+        height: auto; /* Allow flexible height */
+    }
+
+    .team-member img {
+        max-width: 180px;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .team-member h3 {
+        font-size: 1.1rem;
+    }
+
+    .team-member p {
+        font-size: 0.85rem;
+    }
+
+    /* Main content */
+    #mainContent {
+        flex-direction: column; /* Stack vertically */
+        gap: 15px; /* Adjust spacing */
+    }
+
+    .content {
+        max-width: 90%; /* Reduce width for better alignment */
+    }
+
+    .subContent {
+        max-width: 90%; /* Reduce width for smaller devices */
+        padding: 15px;
+    }
+
+    .imgg {
+        max-width: 100%; /* Ensure images fit within the container */
+        height: auto;
+    }
+
+    /* Math Formula Section */
+    #mathFormula {
+        padding: 15px;
+    }
+
+    #math2Formula {
+        flex-direction: column; /* Stack items for smaller screens */
+        gap: 20px;
+    }
+
+    .hMath {
+        font-size: 1.8rem;
+    }
+
+    .hText {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}
