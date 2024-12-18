@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numerical Analysis Group Project</title>
     <link rel="stylesheet" href="math-demo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Partial Differential Equation</h1>
+        <h1>Partial Differential Equation - Heat Equation</h1>
     
     </header>
     <div id="team-section">
@@ -21,8 +22,8 @@
             </div>
             <div class="team-member">
                 <img src="images/newton.jpg" alt="Team Member 2">
-                <h3>Norman Muhammad bin Sumar</h3>
-                <p>294087</p>
+                <h3>Norman Mohammad bin Sumar</h3>
+                <p>294807</p>
             </div>
             <div class="team-member">
                 <img src="images/albanheng2.jpg" alt="Team Member 3">
@@ -37,7 +38,7 @@
         </div>
     </div>
 
-        <div id="mainContent">
+     <div id="mainContent">
             <div class="content">
                 <img src="images/PDE.png" class="imgg">
            </div>
@@ -45,8 +46,27 @@
             <h1>What Is Partial Differential Equation</h1>
                 <p class="ePDE">A partial differential equation (PDE) is a mathematical equation that involves a function with multiple variables and its partial derivatives, describing how the function changes with respect to each variable independently. PDEs are used to model complex phenomena that depend on several factors, like time and space, such as heat conduction, wave propagation, fluid flow, and many physical and engineering processes. For example, the heat equation—a well-known PDE—describes how temperature changes over time across a spatial region. In essence, PDEs allow us to capture and analyze how quantities evolve in multidimensional settings.</p>
         </div>
+     </div>
+    
+     <div id = "mathFormula">
+        <h1 class="hMath">How to identify the Order and Degree of a PDE</h1>
+        <p class="hText">Order of PDE: the order of the highest partial derivative occurs in PDE. </p>
+        <p class="hText">Degree of a PDE: the degree of the highest order derivative which occurs in it after the equation has been rationalized</p>
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText">Example of 1st Order and Degree 1:</p>
+                <p class="hText">\( \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = z + xy \)  </p>
+            </div>
+            <div class="inner2MF">
+                <p class="hText">Example of 3rd Order and Degree 1:</p>
+                <p class="hText">\( \left( \frac{\partial z}{\partial x} \right)^2 + \frac{\partial^3 z}{\partial x^3} = 2x \left( \frac{\partial z}{\partial x} \right) \) </p>
+            </div>
         </div>
-       
+           
+        <p></p>
+        
+        
+    </div>
     
 </body>
 </html>

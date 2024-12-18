@@ -26,7 +26,7 @@ h2 {
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: clamp(14px, 2vw, 3rem);
     margin: 0;
     font-weight: bold;
 }
@@ -102,9 +102,10 @@ header p {
 }
 
 .content {
+    
     height: 100%;
-    witdh: 500px;
-    max-width: 90%;
+    width: 500px auto;
+    max-width: 100%;
 }
 
 .imgg {
@@ -132,15 +133,14 @@ header p {
 
 .subContent h1 {
     
-    font-size: 2.5rem;
+    font-size: clamp(14px, 6vw, 2rem);
     color: #333;
-    margin-top: -5px;
     font-weight: bold;
 }
 
 .ePDE {
     
-    font-size: 1.25rem;
+    font-size: clamp(14px, 4vw, 1.20rem);
     line-height: 1.6;
     color: #555;
 }
@@ -156,6 +156,42 @@ footer {
     border-top: 3px solid #6a11cb;
 }
 
+#mathFormula{
+    background-color: #fff; /* Light blue background */
+      width: 100%; /* Container width is responsive */
+      max-width: 1280px; /* Maximum width */
+      padding: 20px; /* Space inside the container */
+      margin: 20px auto; /* Centers the container */
+      box-sizing: border-box; /* Includes padding/borders in width */
+      overflow: auto; /* Prevents content from overflowing */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px; /* Rounded corners */
+}
+
+#mImg {
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Prevents inline spacing issues */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 8px; /* Optional: adds rounded corners to match container */
+}
+
+.hMath{
+    font-size: clamp(14px, 6vw, 2rem);
+    font-weight: bold;
+}
+
+.hText{
+    font-size: clamp(14px, 4vw, 1.20rem);
+    line-height: 1.6;
+    color: #555;
+}
+#math2Formula{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+ 
 /* Mobile Responsiveness */
 @media only screen and (max-width: 768px) {
 
@@ -217,6 +253,10 @@ footer {
     footer {
         font-size: 0.8rem;
         padding: 10px;
+    }
+
+    #mathFormula {
+        flex-direction: column; /* Stack vertically */
     }
 }
 
