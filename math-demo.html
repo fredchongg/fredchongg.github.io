@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="math-demo.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>Partial Differential Equation - Heat Equation</h1>
-    
+        <h1>The Mathematical Explanation of Heat Distribution (PDE)</h1>
+
     </header>
     <div id="team-section">
         <h2>Meet Our Team</h2>
@@ -38,35 +40,302 @@
         </div>
     </div>
 
-     <div id="mainContent">
-            <div class="content">
-                <img src="images/PDE.png" class="imgg">
-           </div>
-           <div class="subContent">
-            <h1>What Is Partial Differential Equation</h1>
-                <p class="ePDE">A partial differential equation (PDE) is a mathematical equation that involves a function with multiple variables and its partial derivatives, describing how the function changes with respect to each variable independently. PDEs are used to model complex phenomena that depend on several factors, like time and space, such as heat conduction, wave propagation, fluid flow, and many physical and engineering processes. For example, the heat equation—a well-known PDE—describes how temperature changes over time across a spatial region. In essence, PDEs allow us to capture and analyze how quantities evolve in multidimensional settings.</p>
+    <div id="mainContent">
+        <div class="content">
+            <img src="images/PDE.png" class="imgg">
         </div>
-     </div>
-    
-     <div id = "mathFormula">
+        <div class="subContent">
+            <h1>What Is Partial Differential Equation</h1>
+            <p class="ePDE">A partial differential equation (PDE) is a mathematical equation that involves a function
+                with multiple variables and its partial derivatives, describing how the function changes with respect to
+                each variable independently. PDEs are used to model complex phenomena that depend on several factors,
+                like time and space, such as heat conduction, wave propagation, fluid flow, and many physical and
+                engineering processes. For example, the heat equation—a well-known PDE—describes how temperature changes
+                over time across a spatial region. In essence, PDEs allow us to capture and analyze how quantities
+                evolve in multidimensional settings.</p>
+        </div>
+    </div>
+
+    <div id="mathFormula">
         <h1 class="hMath">How to identify the Order and Degree of a PDE</h1>
         <p class="hText">Order of PDE: the order of the highest partial derivative occurs in PDE. </p>
-        <p class="hText">Degree of a PDE: the degree of the highest order derivative which occurs in it after the equation has been rationalized</p>
+        <p class="hText">Degree of a PDE: the degree of the highest order derivative which occurs in it after the
+            equation has been rationalized</p>
         <div id="math2Formula">
             <div class="inner2MF">
                 <p class="hText">Example of 1st Order and Degree 1:</p>
-                <p class="hText">\( \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = z + xy \)  </p>
+                <p class="hText">\( \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = z + xy \) </p>
             </div>
             <div class="inner2MF">
                 <p class="hText">Example of 3rd Order and Degree 1:</p>
-                <p class="hText">\( \left( \frac{\partial z}{\partial x} \right)^2 + \frac{\partial^3 z}{\partial x^3} = 2x \left( \frac{\partial z}{\partial x} \right) \) </p>
+                <p class="hText">\( \left( \frac{\partial z}{\partial x} \right)^2 + \frac{\partial^3 z}{\partial x^3} =
+                    2x \left( \frac{\partial z}{\partial x} \right) \) </p>
             </div>
         </div>
-           
-        <p></p>
-        
-        
+
+        <h1 class="hMath" style="margin-top: 50px;">How to differentiate between Linear PDE and Non-Linear PDE</h1>
+        <p class="hText">A PDE is said to be linear if the dependent variable, z and its partial derivatives are only in
+            the first degree and not multiplied. Otherwise, a PDE is said to be non-linear. </p>
+
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText" style="margin-left: 40px;">Linear PDE</p>
+                <p class="hText">\[
+                    \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = z + xy
+                    \] </p>
+            </div>
+            <div class="inner2MF">
+                <p class="hText" style="margin-left: 60px;">Non-Linear PDE</p>
+                <p class="hText">\[
+                    \left( \frac{\partial z}{\partial x} \right)^2 + \frac{\partial^3 z}{\partial x^3} = 2x \left(
+                    \frac{\partial z}{\partial x} \right)
+                    \] </p>
+            </div>
+            <div class="inner2MF">
+                <p class="hText" style="margin-left: 30px;">Non-Linear PDE</p>
+                <p class="hText">\[
+                    x \left( \frac{\partial z}{\partial x} \right) + \frac{\partial z}{\partial y} = x
+                    \] </p>
+            </div>
+        </div>
     </div>
-    
+
+    <div id="mathFormula">
+        <p style="margin-top: 50px ; font-size:1.8rem ; font-weight: bold;">Classification of 2nd order linear partial
+            differential equations for 2 independent variables </p>
+        <p class="hText">Suppose \(u(x,t)\) is the solution of PDE and</p>
+        <p class="hText">\[
+            A u_{xx} + B u_{xy} + C u_{yy} + F(x, y, u, u_x, u_y) = g(x, y)
+            \]
+        </p>
+        <p class="hText">where \(x\) and \(y\) are independent variable</p>
+        <div id="math2Formula">
+            <div class="inner2MF">
+
+                <p class="hText">\[
+                    u_x = \frac{\delta u}{\delta x}, \quad
+                    u_y = \frac{\delta u}{\delta y}, \quad
+                    u_{xx} = \frac{\delta^2 u}{\delta x^2}, \quad
+                    u_{xy} = \frac{\delta^2 u}{\delta x \delta y}, \quad
+                    u_{yy} = \frac{\delta^2 u}{\delta y^2}.
+                    \]</p>
+            </div>
+        </div>
+        <p class="hText">if \(B^2-4AC\lt0\),then the PDE is elliptic</p>
+        <p class="hText">if \(B^2-4AC\gt0\),then the PDE is hyperbolic</p>
+        <p class="hText">if \(B^2-4AC = 0\),then the PDE is parabolic</p>
+    </div>
+
+    <div id="mathFormula">
+        <h1 class="hMath">What is Heat/Diffusion Equation?</h1>
+        <p class="hText">Imagine that you have a rod as shown below. Say that you are there are heat flows that flow in
+            and out through this rod. </p>
+        <p class="hText">By considering a one-dimensional reference, say \(x\), and we want to know the temperature of a
+            disk with location \(x\) at time \(t\). Mathematically, we recognize the temperature as a function of two
+            independent variables, namely space variable \(x\) and time variable \(t\).
+            We may write this relationship as \(T(x, t), \{x \mid x \in \mathbb{R}, x_0 \leq x \leq x_N\}, \{t \mid t
+            \in \mathbb{R}, t \geq 0\}\) Now, we make several of the following assumptions that lead us towards the
+            solution for \(T(x,t)\):</p>
+
+        <ol class="hText">
+            <li style="margin-top: 5px;">We have known the fixed/ constant density of the rod, described by \(\rho =
+                \frac{Mass}{Volume} \) kg \(unit^{-3}\)</li>
+            <li style="margin-top: 5px;">The cross-sectional area of each disk is constant described by \(A = (Area)
+                unit^2\).</li>
+            <li style="margin-top: 5px;">The temperature \(T(x,t)\) is measured in kelvin, \(K\). Also recall that the
+                conversion from temperature in degree Celsius \(T(K) = T(^\circ\text{C}) + 273\)</li>
+        </ol>
+        <p class="hText" style="margin-top: 30px;">From the above information, we may now determine the total mass of
+            the rod for the section \([x,x+\Delta x]\), where</p>
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText">\[Total Mass = \int_{x}^{x+\Delta x} \rho A \, dx\]</p>
+            </div>
+        </div>
+        <p class="hText">Now, ask ourself how can this temperature \(T(x,t)\) may be converted into heat? Introduce the
+            following</p>
+        <ul class="hText">
+            <li>The specific heat energy requried to heat up a kilogram by one degree kelvin, \(c_v\) and has the unit
+                of energy \(kg^{-1}K^{-1}\).</li>
+        </ul>
+        <p class="hText" style="margin-top: 40px;">Note that the total heat energy for the section \([x,x+\Delta x]\) is
+        </p>
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText">\[
+                    \text{Total Heat Energy} = \int_{x}^{x+\Delta x} \rho A c_v T(x,t) \, dx = \rho A c_v
+                    \int_{x}^{x+\Delta x} T(x,t) \, dx
+                    \]
+                </p>
+            </div>
+        </div>
+        <p class="hText">Provided that we have the total heat energy, can we measure the instantaneous rate of change of
+            the total heat energy at specific time t? Well, we back to the definition of derivative.</p>
+        <p class="hText">Note that the derivative of the total heat energy with respect to time from the above equation is </p>
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText">\[
+                    \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \frac{\partial}{\partial t} \rho A c_v
+                    \int_{x}^{x+\Delta x} T(x, t) \, dx
+                    \]</p>
+            </div>
+        </div>
+        <p class="hText">Now, we equate the above equation as follows:</p>
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText">\[
+                    \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \rho A c_v \frac{\partial}{\partial t}
+                    \int_{x}^{x+\Delta x} T(x, t) \, dx = A q(x, t) - A q(x + \Delta x, t)
+                    \]</p>
+            </div>
+        </div>
+        <p class="hText">Where \(q(x,t)\) is the flow or flux of heat per unit time per cross sectional area at \(x\) in
+            the positive \(x\) direction at time \(t\). Observe that</p>
+        <ol class="hText">
+            <li style="margin-top: 5px;">\(Aq(x,t)\) is where the heat flows in.</li>
+            <li style="margin-top: 5px;">\(Aq(x+\Delta x,t)\) is where the heat flows out.</li>
+        </ol>
+        <p class="hText" style="margin-top: 30px;">We again assume that \(\frac{\partial}{\partial t} T(x,t)\) is
+            continuous, then the Leibniz'Rule may be applied as the following:</p>
+        <p class="hText" style="margin-top: 30px;">\[
+            \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \rho A c_v \frac{\partial}{\partial t}
+            \int_{x}^{x+\Delta x} T(x, t) \, dx
+            \]</p>
+        <p class="hText" style="margin-top: 30px;">\[
+            \rho c_v \frac{\partial}{\partial t} \int_{x}^{x+\Delta x} T(x, t) \, dx = q(x, t) - q(x + \Delta x, t)
+            \]</p>
+        <p class="hText" style="margin-top: 30px;">
+            \[
+            \Rightarrow \rho c_v \int_x^{x+\Delta x} \frac{\partial}{\partial t} T(x, t) \, dx = q(x, t) - q(x + \Delta
+            x, t) = -[q(x + \Delta x, t) - q(x, t)]
+            \]
+        </p>
+        <p class="hText" style="margin-top: 30px;">
+            \[
+            \Rightarrow \lim_{\Delta x \to 0} \frac{1}{\Delta x} \rho c_v \int_x^{x+\Delta x} \frac{\partial}{\partial
+            t} T(x, t) \, dx = -\lim_{\Delta x \to 0} \frac{[q(x + \Delta x, t) - q(x, t)]}{\Delta x}
+            \]
+        </p>
+        <p class="hText" style="margin-top: 40px;">
+            Note that: \(\lim_{\Delta x \to 0} \frac{1}{\Delta x} \rho c_v \int_x^{x+\Delta x} \frac{\partial}{\partial t} T(x,
+            t) \,
+            dx = \rho c_v \frac{\partial}{\partial t} T(x, t)\) and <span style="margin-left: 3px;">\(\lim_{\Delta x \to 0}
+                \frac{q(x+\Delta x, t) - q(x, t)}{\Delta x} = \frac{\partial}{\partial x} q(x, t)\)</span> , so
+        
+        </p>
+        <p class="hText" style="margin-top: 30px;">
+        
+            \[
+            \rho c_v \frac{\partial}{\partial t} T(x, t) = -\frac{\partial}{\partial x} q(x, t)
+            \]
+        </p>
+        <p class="hText" style="margin-top: 30px;">
+            \[
+            \Rightarrow \frac{\partial}{\partial t} T(x, t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x} q(x, t).
+            \]
+        </p>
+        <p class="hText">At this stage, we enter the realm of Fourier’s Law or also known as the law of heat conduction where it states that</p>
+        <p class="hText">\[q(x,t) = -k\frac{\partial}{\partial x}T(x,t)\]</p>
+        <p class="hText">Where \(k\) is the thermal conductivity, therefore</p>
+        <p class="hText">\[\frac{\partial}{\partial t} T(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x} q(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x}[-k\frac{\partial}{\partial x} T(x,t)]\]</p>
+        <p class="hText" style="margin-top: 30px;">\[\frac{\partial}{\partial t} T(x,t) = \frac{k}{\rho c_v} \frac{\partial^2}{\partial x^2} T(x,t)\]</p>
+        <p class="hText">Where \(\frac{k}{\rho c_v}\) is known as the thermal diffusivity.</p>
+    </div>
+    <!-- One Section (Press Ctrl+/)-->
+    <div id="mathFormula">
+        <h1 class="hMath">Heat Equation in 1-Dimension</h1>
+        <p class="hText">The heat equation may be described through the following: </p>
+
+        <div id="math2Formula">
+            <div class="inner2MF">
+                <p class="hText">\begin{equation}
+                    \frac{\partial}{\partial t} u(x, t)=k \frac{\partial^2}{\partial x^2} u(x, t)
+                    \end{equation}
+                </p>
+            </div>
+        </div>
+        <p class="hText">We want to solve the initial value problem of the equation above with \(\begin{equation}
+            \{t \mid t \in \mathbb{R}, t>0\}
+            \end{equation}\) and \(\begin{equation}
+            \{x \mid x \in \mathbb{R}\}
+            \end{equation}\). Consider that we are seeking for solution in the form of the following: </p>
+
+        <div class="inner2MF">
+            <p class="hText">\begin{equation}
+                u(x, t)=\Psi(x) \varphi(t)
+                \end{equation}
+            </p>
+        </div>
+        <p class="hText">where the above heat equation is generated through the product of the independent function of
+            space \(\Psi(x)\) and a function of time \(\varphi(t)\) </p>
+        <p class="hText" style="margin-top: 100px;">Note that</p>
+        <div class="inner2MF">
+            <p class="hText">\begin{equation}
+                \frac{\partial}{\partial t} u(x, t)=\frac{\partial}{\partial t}[\Psi(x) \varphi(t)]=\Psi(x) \frac{d}{d
+                t} \varphi(t)
+                \end{equation}
+            </p>
+        </div>
+        <p class="hText">And</p>
+        <div class="inner2MF">
+            <p class="hText">
+                \[
+                \frac{\partial^2}{\partial x^2} u(x,t) = \frac{\partial^2}{\partial x^2} \left[ \psi(x) \phi(t) \right]
+                = \phi(t) \frac{d^2}{dx^2} \psi(x)
+                \]
+            </p>
+        </div>
+        <p class="hText">Therefore</p>
+        <div class="inner2MF">
+            <p class="hText">\[
+                \frac{\partial}{\partial t} u(x,t) = k \frac{\partial^2}{\partial x^2} u(x,t) = \psi(x) \frac{d}{dt}
+                \phi(t) = k \phi(t) \frac{d^2}{dx^2} \psi(x)
+                \]
+            </p>
+        </div>
+        <p class="hText">From</p>
+        <div class="inner2MF">
+            <p class="hText">\[
+                \psi(x) \frac{d}{dt} \phi(t) = k \phi(t) \frac{d^2}{dx^2} \psi(x)
+                \]
+            </p>
+        </div>
+        <p class="hText">Assume there is a constant, \( \lambda\) where it is known as a constant with the following
+            definition:</p>
+        <div class="inner2MF">
+            <p class="hText">\[
+                -\lambda = \frac{1}{k} \phi(t) \frac{d}{dt} \phi(t) = \frac{1}{\psi(x)} \frac{d^2}{dx^2} \psi(x),
+                \quad \lambda > 0
+                \]
+            </p>
+        </div>
+        <p class="hText" style="font-weight: bold; color: black;">Solving for \(\psi(x)\)</p>
+        <p class="hText">Note that from the equation \(-\lambda = \frac{1}{k} \phi(t) \frac{d}{dt} \phi(t)\) we may
+            determine the following:</p>
+        <div class="inner2MF">
+            <p class="hText">\[\Rightarrow \frac{d^2}{d x^2} \Psi(x)-\lambda \Psi(x)=\frac{d^2}{d x^2} \Psi(x)+(0)
+                \frac{d}{d x} \Psi(x)+\lambda \Psi(x)=0 \]</p>
+        </div>
+        <p class="hText" style="margin-top: 40px;">We recall again our understanding on Ordinary Differential Equations,
+            particularly linear second order constant equations where we are interested to find the solution for the
+            above problem. </p>
+        <p class="hText" style="margin-top: 50px;">At the end we arrive at the real solution for \(\phi(x)\) where it is
+            known as</p>
+        <div class="inner2MF">
+            <p class="hText">\[\operatorname{Re}[\Psi(x)]=a_1 \cos (\sqrt{\lambda} x)+a_2 \sin (\sqrt{\lambda} x)\]</p>
+        </div>
+        <p class="hText" style="font-weight: bold; color: black; margin-top: 30px;">Solving for \(\phi(t)\)</p>
+        <p class="hText">Same goes for the function of time where we determine the following:</p>
+        <div class="inner2MF">
+            <p class="hText">\[-\lambda=\frac{1}{k \varphi(t)} \frac{d}{d t} \varphi(t)\]</p>
+            <p class="hText">\[\Rightarrow-\lambda k=\frac{1}{\varphi(t)} \frac{d}{d t} \varphi(t)\]</p>
+        </div>
+        <p class="hText">Solving the above differential equation results the following:</p>
+        <div class="inner2MF">
+            <p class="hText">\[\varphi(t)=\exp \left(-\lambda k t+\alpha_2\right)=\exp \left(\alpha_2\right) \exp
+                (-\lambda k t)=a_3 \exp (-\lambda k t)\]</p>
+        </div>
+    </div>
 </body>
+
 </html>
