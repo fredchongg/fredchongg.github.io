@@ -154,6 +154,9 @@
             <p class="hText">Imagine that you have a rod as shown below. Say that you are there are heat flows that flow
                 in
                 and out through this rod. </p>
+            <div class="rod-image-container">
+                <img src="images/rod.png" alt="rod">
+            </div>
             <p class="hText">By considering a one-dimensional reference, say \(x\), and we want to know the temperature
                 of a
                 disk with location \(x\) at time \(t\). Mathematically, we recognize the temperature as a function of
@@ -250,14 +253,15 @@
                 \[
                 \Rightarrow \lim_{\Delta x \to 0} \frac{1}{\Delta x} \rho c_v \int_x^{x+\Delta x}
                 \frac{\partial}{\partial
-                t} T(x, t) \, dx = -\lim_{\Delta x \to 0} \frac{[q(x + \Delta x, t) - q(x, t)]}{\Delta x}
+                t} T(x, t) \,
+                dx = -\lim_{\Delta x \to 0} \frac{[q(x + \Delta x, t) - q(x, t)]}{\Delta x}
                 \]
             </p>
             <p class="hText" style="margin-top: 40px;">
                 Note that: \(\lim_{\Delta x \to 0} \frac{1}{\Delta x} \rho c_v \int_x^{x+\Delta x}
                 \frac{\partial}{\partial t} T(x,
                 t) \,
-                dx = \rho c_v \frac{\partial}{\partial t} T(x, t)\) and <span style="margin-left: 3px;">\(\lim_{\Delta x
+                dx = \rho c_v \frac{\partial}{\partial t}  T(x, t)\) and <span style="margin-left: 3px;">\(\lim_{\Delta x
                     \to 0}
                     \frac{q(x+\Delta x, t) - q(x, t)}{\Delta x} = \frac{\partial}{\partial x} q(x, t)\)</span> , so
 
@@ -325,24 +329,24 @@
             <div class="inner2MF">
                 <p class="hText">
                     \[
-                    \frac{\partial^2}{\partial x^2} u(x,t) = \frac{\partial^2}{\partial x^2} \left[ \psi(x) \phi(t)
+                    \frac{\partial^2}{\partial x^2} u(x,t) = \frac{\partial^2}{\partial x^2} \left[ \Psi(x) \varphi(t)
                     \right]
-                    = \phi(t) \frac{d^2}{dx^2} \psi(x)
+                    = \varphi(t) \frac{d^2}{dx^2} \Psi(x)
                     \]
                 </p>
             </div>
             <p class="hText">Therefore</p>
             <div class="inner2MF">
                 <p class="hText">\[
-                    \frac{\partial}{\partial t} u(x,t) = k \frac{\partial^2}{\partial x^2} u(x,t) = \psi(x) \frac{d}{dt}
-                    \phi(t) = k \phi(t) \frac{d^2}{dx^2} \psi(x)
+                    \frac{\partial}{\partial t} u(x,t) = k \frac{\partial^2}{\partial x^2} u(x,t) = \Psi(x) \frac{d}{dt}
+                    \varphi(t) = k \varphi(t) \frac{d^2}{dx^2} \Psi(x)
                     \]
                 </p>
             </div>
             <p class="hText">From</p>
             <div class="inner2MF">
                 <p class="hText">\[
-                    \psi(x) \frac{d}{dt} \phi(t) = k \phi(t) \frac{d^2}{dx^2} \psi(x)
+                    \Psi(x) \frac{d}{dt} \varphi(t) = k \varphi(t) \frac{d^2}{dx^2} \Psi(x)
                     \]
                 </p>
             </div>
@@ -350,13 +354,13 @@
                 definition:</p>
             <div class="inner2MF">
                 <p class="hText">\[
-                    -\lambda = \frac{1}{k} \phi(t) \frac{d}{dt} \phi(t) = \frac{1}{\psi(x)} \frac{d^2}{dx^2} \psi(x),
+                    -\lambda = \frac{1}{k} \varphi(t) \frac{d}{dt} \varphi(t) = \frac{1}{\psi(x)} \frac{d^2}{dx^2} \Psi(x),
                     \quad \lambda > 0
                     \]
                 </p>
             </div>
             <p class="hText" style="font-weight: bold; color: white;">Solving for \(\Psi(x)\)</p>
-            <p class="hText">Note that from the equation \(-\lambda = \frac{1}{k} \phi(t) \frac{d}{dt} \phi(t)\) we may
+            <p class="hText">Note that from the equation \(-\lambda = k\frac{1}{\Psi(x)} \frac{d}{dx^2} \Psi(x)\) we may
                 determine the following:</p>
             <div class="inner2MF">
                 <p class="hText">\[\Rightarrow \frac{d^2}{d x^2} \Psi(x)-\lambda \Psi(x)=\frac{d^2}{d x^2} \Psi(x)+(0)
@@ -366,7 +370,7 @@
                 Equations,
                 particularly linear second order constant equations where we are interested to find the solution for the
                 above problem. </p>
-            <p class="hText" style="margin-top: 50px;">At the end we arrive at the real solution for \(\phi(x)\) where
+            <p class="hText" style="margin-top: 50px;">At the end we arrive at the real solution for \(\Psi(x)\) where
                 it is
                 known as</p>
             <div class="inner2MF">
@@ -384,6 +388,19 @@
                 <p class="hText">\[\varphi(t)=\exp \left(-\lambda k t+\alpha_2\right)=\exp \left(\alpha_2\right) \exp
                     (-\lambda k t)=a_3 \exp (-\lambda k t)\]</p>
             </div>
+
+            <p class="hText" style="font-weight: bold; color: white; margin-top: 40px;">Solving for heat equation \(u(x,t)\)</p>
+            <p class="hText">\[u(x,t) = Re[\Psi(x)]\varphi(t)\]</p>
+            <p class="hText">\[u(x,t) = Re[\Psi(x)]\varphi(t) = a_3exp(-\lambda kt)[a_1cos(\sqrt{\lambda}x) + a_2sin(\sqrt{\lambda}x)]\]</p>
+            <p class="hText" style="font-weight: bold; color: white; margin-top: 40px;">We assume the following conditions exist</p>
+            <ol class="hText">
+                <li style="margin-top: 5px;">\(u(0,t) = a_3exp(-\lambda kt)[a_1cos(\sqrt{\lambda}x_0)+a_2sin(\sqrt{\lambda}x_0)] = 0\)</li>
+                <li style="margin-top: 5px;">\(u(L,t) = a_3exp(-\lambda kt)[a_1cos(\sqrt{\lambda}x_N)+a_2sin(\sqrt{\lambda}x_N)] = 0\)</li>
+                <li style="margin-top: 5px;">\(u(x_0,t) = u(x_N,t) = 0\)</li>
+                <li style="margin-top: 5px;">\(u(x,0) = f(x)\)</li>
+            </ol>
+            <p class="hText">By solving the above mathematical assumptions, we have finally arrived at the following equation</p>
+            <p class="hText">\[u_j(x,t) = \lim_{n \to \infty}\sum_{j=1}^n b_j\;exp\left[-\left(\frac{j\pi}{L}\right)^2kt\right]sin\left(\frac{j\pi}{L}x\right)\]</p>
         </div>
 
         <div id="mathFormula">
