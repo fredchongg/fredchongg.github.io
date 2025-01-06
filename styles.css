@@ -1,0 +1,433 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    min-height: 100vh;
+}
+
+#mathFormula{
+      background-color: #000000;
+      width: 100%; /* Container width is responsive */
+      max-width: 1280px; /* Maximum width */
+      padding: 20px; /* Space inside the container */
+      margin: 20px auto; /* Centers the container */
+      box-sizing: border-box; /* Includes padding/borders in width */
+      overflow: auto; /* Prevents content from overflowing */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px; /* Rounded corners */
+      border: 1px solid #4CAF50;
+}
+
+.hMath{
+    font-family: Arial, sans-serif;
+    font-size: clamp(14px, 6vw, 2rem);
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.calculation-table {
+    color: white;
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.calculation-table td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+.hText{
+    font-family: Arial, sans-serif;
+    font-size: clamp(14px, 4vw, 1.20rem);
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+#math2Formula{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.project-title {
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 1.8rem;
+    margin: 0;
+    z-index: 1000;
+}
+
+.hero-section {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.main-title h2 {
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.get-started {
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.get-started:hover {
+    background-color: #4CAF50;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.team-section {
+    padding: 20px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+    margin-top: -40px;
+}
+
+.section-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #4CAF50;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 15px;
+}
+
+.member-id {
+    color: #4CAF50;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Update responsive design for smaller screens */
+@media (max-width: 1200px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-image {
+        width: 160px;
+        height: 160px;
+    }
+} 
+
+main {
+    position: relative;
+    z-index: 1;
+} 
+
+.pde-section {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+}
+
+.pde-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    
+}
+
+.pde-image {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.pde-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.pde-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pde-content {
+    color: #ffffff;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pde-content h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', monospace;
+}
+
+.pde-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Make it responsive */
+@media (max-width: 968px) {
+    .pde-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .pde-content h2 {
+        font-size: 2rem;
+    }
+
+    .pde-content p {
+        font-size: 1rem;
+    }
+} 
+
+/* Update responsive styles */
+@media (max-width: 1024px) {
+    .main-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        left: 20px;
+    }
+
+    .hero-section {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title h1 {
+        font-size: 2rem;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+        left: 15px;
+    }
+
+    .hero-section {
+        height: 40vh;
+    }
+
+    /* Math Formula sections */
+    #mathFormula {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .hMath {
+        font-size: clamp(14px, 5vw, 1.5rem);
+    }
+
+    .hText {
+        font-size: clamp(14px, 4vw, 1rem);
+    }
+
+    #math2Formula {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .inner2MF {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Team section */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .member-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .team-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* PDE section */
+    .pde-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pde-content {
+        padding: 20px;
+    }
+
+    .pde-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1rem;
+        left: 10px;
+    }
+
+    .hero-section {
+        height: 30vh;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .pde-content h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust particle density for better mobile performance */
+    .particles-js-canvas-el {
+        opacity: 0.5;
+    }
+}
+
+/* Add smooth scrolling for better mobile experience */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets for mobile */
+button, 
+a {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Prevent horizontal scrolling on mobile */
+body {
+    overflow-x: hidden;
+    width: 100%;
+} 

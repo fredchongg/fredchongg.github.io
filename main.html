@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical Analysis Group Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" defer></script>
+</head>
+
+<body>
+    <h1 class="project-title">Numerical Analysis Group Project</h1>
+
+    <main>
+        <div class="hero-section">
+            <div class="main-title">
+                <h1>The Algorithms Behind Heat Equation</h1>
+                <h2>Explained by Partial Differential Equations</h2>
+            </div>
+        </div>
+
+        <section class="team-section">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="images/panhong.jpg" alt="Frederick Chong Yew Shen">
+                    </div>
+                    <h3>Frederick Chong Yew Shen</h3>
+                    <p class="member-id">293228</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="images/newton.jpg" alt="Norman Mohammad bin Sumar">
+                    </div>
+                    <h3>Norman Mohammad bin Sumar</h3>
+                    <p class="member-id">294807</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="images/albanheng2.jpg" alt="Alban Heng Yu Cheng">
+                    </div>
+                    <h3>Alban Heng Yu Cheng</h3>
+                    <p class="member-id">291958</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="images/kee.png" alt="Kee Chin Yuan">
+                    </div>
+                    <h3>Kee Chin Yuan</h3>
+                    <p class="member-id">294093</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pde-section">
+            <div class="pde-container">
+                <div class="pde-image">
+                    <img src="images/PDE.png" alt="3D PDE Graph">
+                </div>
+                <div class="pde-content">
+                    <h2>What Is Partial Differential Equation</h2>
+                    <p>A partial differential equation (PDE) is a mathematical equation that involves a function with
+                        multiple variables and its partial derivatives, describing how the function changes with respect
+                        to each variable independently. PDEs are used to model complex phenomena that depend on several
+                        factors, like time and space, such as heat conduction, wave propagation, fluid flow, and many
+                        physical and engineering processes. For example, the heat equation—a well-known PDE—describes
+                        how temperature changes over time across a spatial region. In essence, PDEs allow us to capture
+                        and analyze how quantities evolve in multidimensional settings.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="mathFormula">
+            <h1 class="hMath">How to identify the Order and Degree of a PDE</h1>
+            <p class="hText">Order of PDE: the order of the highest partial derivative occurs in PDE. </p>
+            <p class="hText">Degree of a PDE: the degree of the highest order derivative which occurs in it after the
+                equation has been rationalized</p>
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">Example of 1st Order and Degree 1:</p>
+                    <p class="hText">\( \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = z + xy \) </p>
+                </div>
+                <div class="inner2MF">
+                    <p class="hText">Example of 3rd Order and Degree 1:</p>
+                    <p class="hText">\( \left( \frac{\partial z}{\partial x} \right)^2 + \frac{\partial^3 z}{\partial
+                        x^3} =
+                        2x \left( \frac{\partial z}{\partial x} \right) \) </p>
+                </div>
+            </div>
+
+            <h1 class="hMath" style="margin-top: 50px;">How to differentiate between Linear PDE and Non-Linear PDE</h1>
+            <p class="hText">A PDE is said to be linear if the dependent variable, z and its partial derivatives are
+                only in
+                the first degree and not multiplied. Otherwise, a PDE is said to be non-linear. </p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText" style="margin-left: 40px;">Linear PDE</p>
+                    <p class="hText">\[
+                        \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = z + xy
+                        \] </p>
+                </div>
+                <div class="inner2MF">
+                    <p class="hText" style="margin-left: 60px;">Non-Linear PDE</p>
+                    <p class="hText">\[
+                        \left( \frac{\partial z}{\partial x} \right)^2 + \frac{\partial^3 z}{\partial x^3} = 2x \left(
+                        \frac{\partial z}{\partial x} \right)
+                        \] </p>
+                </div>
+                <div class="inner2MF">
+                    <p class="hText" style="margin-left: 30px;">Non-Linear PDE</p>
+                    <p class="hText">\[
+                        x \left( \frac{\partial z}{\partial x} \right) + \frac{\partial z}{\partial y} = x
+                        \] </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="mathFormula">
+            <p class="hMath">Classification of 2nd order linear partial
+                differential equations for 2 independent variables </p>
+            <p class="hText">Suppose \(u(x,t)\) is the solution of PDE and</p>
+            <p class="hText">\[
+                A u_{xx} + B u_{xy} + C u_{yy} + F(x, y, u, u_x, u_y) = g(x, y)
+                \]
+            </p>
+            <p class="hText">where \(x\) and \(y\) are independent variable</p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+
+                    <p class="hText">\[
+                        u_x = \frac{\delta u}{\delta x}, \quad
+                        u_y = \frac{\delta u}{\delta y}, \quad
+                        u_{xx} = \frac{\delta^2 u}{\delta x^2}, \quad
+                        u_{xy} = \frac{\delta^2 u}{\delta x \delta y}, \quad
+                        u_{yy} = \frac{\delta^2 u}{\delta y^2}.
+                        \]</p>
+                </div>
+            </div>
+            <p class="hText">if \(B^2-4AC\lt0\),then the PDE is elliptic</p>
+            <p class="hText">if \(B^2-4AC\gt0\),then the PDE is hyperbolic</p>
+            <p class="hText">if \(B^2-4AC = 0\),then the PDE is parabolic</p>
+        </div>
+
+        <div id="mathFormula">
+            <h1 class="hMath">What is Heat/Diffusion Equation?</h1>
+            <p class="hText">Imagine that you have a rod as shown below. Say that you are there are heat flows that flow
+                in
+                and out through this rod. </p>
+            <p class="hText">By considering a one-dimensional reference, say \(x\), and we want to know the temperature
+                of a
+                disk with location \(x\) at time \(t\). Mathematically, we recognize the temperature as a function of
+                two
+                independent variables, namely space variable \(x\) and time variable \(t\).
+                We may write this relationship as \(T(x, t), \{x \mid x \in \mathbb{R}, x_0 \leq x \leq x_N\}, \{t \mid
+                t
+                \in \mathbb{R}, t \geq 0\}\) Now, we make several of the following assumptions that lead us towards the
+                solution for \(T(x,t)\):</p>
+
+            <ol class="hText">
+                <li style="margin-top: 5px;">We have known the fixed/ constant density of the rod, described by \(\rho =
+                    \frac{Mass}{Volume} \) kg \(unit^{-3}\)</li>
+                <li style="margin-top: 5px;">The cross-sectional area of each disk is constant described by \(A = (Area)
+                    unit^2\).</li>
+                <li style="margin-top: 5px;">The temperature \(T(x,t)\) is measured in kelvin, \(K\). Also recall that
+                    the
+                    conversion from temperature in degree Celsius \(T(K) = T(^\circ\text{C}) + 273\)</li>
+            </ol>
+            <p class="hText" style="margin-top: 30px;">From the above information, we may now determine the total mass
+                of
+                the rod for the section \([x,x+\Delta x]\), where</p>
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[Total Mass = \int_{x}^{x+\Delta x} \rho A \, dx\]</p>
+                </div>
+            </div>
+            <p class="hText">Now, ask ourself how can this temperature \(T(x,t)\) may be converted into heat? Introduce
+                the
+                following</p>
+            <ul class="hText">
+                <li>The specific heat energy requried to heat up a kilogram by one degree kelvin, \(c_v\) and has the
+                    unit
+                    of energy \(kg^{-1}K^{-1}\).</li>
+            </ul>
+            <p class="hText" style="margin-top: 40px;">Note that the total heat energy for the section \([x,x+\Delta
+                x]\) is
+            </p>
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[
+                        \text{Total Heat Energy} = \int_{x}^{x+\Delta x} \rho A c_v T(x,t) \, dx = \rho A c_v
+                        \int_{x}^{x+\Delta x} T(x,t) \, dx
+                        \]
+                    </p>
+                </div>
+            </div>
+            <p class="hText">Provided that we have the total heat energy, can we measure the instantaneous rate of
+                change of
+                the total heat energy at specific time t? Well, we back to the definition of derivative.</p>
+            <p class="hText">Note that the derivative of the total heat energy with respect to time from the above
+                equation is </p>
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[
+                        \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \frac{\partial}{\partial t} \rho A c_v
+                        \int_{x}^{x+\Delta x} T(x, t) \, dx
+                        \]</p>
+                </div>
+            </div>
+            <p class="hText">Now, we equate the above equation as follows:</p>
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[
+                        \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \rho A c_v \frac{\partial}{\partial t}
+                        \int_{x}^{x+\Delta x} T(x, t) \, dx = A q(x, t) - A q(x + \Delta x, t)
+                        \]</p>
+                </div>
+            </div>
+            <p class="hText">Where \(q(x,t)\) is the flow or flux of heat per unit time per cross sectional area at
+                \(x\) in
+                the positive \(x\) direction at time \(t\). Observe that</p>
+            <ol class="hText">
+                <li style="margin-top: 5px;">\(Aq(x,t)\) is where the heat flows in.</li>
+                <li style="margin-top: 5px;">\(Aq(x+\Delta x,t)\) is where the heat flows out.</li>
+            </ol>
+            <p class="hText" style="margin-top: 30px;">We again assume that \(\frac{\partial}{\partial t} T(x,t)\) is
+                continuous, then the Leibniz'Rule may be applied as the following:</p>
+            <p class="hText" style="margin-top: 30px;">\[
+                \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \rho A c_v \frac{\partial}{\partial t}
+                \int_{x}^{x+\Delta x} T(x, t) \, dx
+                \]</p>
+            <p class="hText" style="margin-top: 30px;">\[
+                \rho c_v \frac{\partial}{\partial t} \int_{x}^{x+\Delta x} T(x, t) \, dx = q(x, t) - q(x + \Delta x, t)
+                \]</p>
+            <p class="hText" style="margin-top: 30px;">
+                \[
+                \Rightarrow \rho c_v \int_x^{x+\Delta x} \frac{\partial}{\partial t} T(x, t) \, dx = q(x, t) - q(x +
+                \Delta
+                x, t) = -[q(x + \Delta x, t) - q(x, t)]
+                \]
+            </p>
+            <p class="hText" style="margin-top: 30px;">
+                \[
+                \Rightarrow \lim_{\Delta x \to 0} \frac{1}{\Delta x} \rho c_v \int_x^{x+\Delta x}
+                \frac{\partial}{\partial
+                t} T(x, t) \, dx = -\lim_{\Delta x \to 0} \frac{[q(x + \Delta x, t) - q(x, t)]}{\Delta x}
+                \]
+            </p>
+            <p class="hText" style="margin-top: 40px;">
+                Note that: \(\lim_{\Delta x \to 0} \frac{1}{\Delta x} \rho c_v \int_x^{x+\Delta x}
+                \frac{\partial}{\partial t} T(x,
+                t) \,
+                dx = \rho c_v \frac{\partial}{\partial t} T(x, t)\) and <span style="margin-left: 3px;">\(\lim_{\Delta x
+                    \to 0}
+                    \frac{q(x+\Delta x, t) - q(x, t)}{\Delta x} = \frac{\partial}{\partial x} q(x, t)\)</span> , so
+
+            </p>
+            <p class="hText" style="margin-top: 30px;">
+
+                \[
+                \rho c_v \frac{\partial}{\partial t} T(x, t) = -\frac{\partial}{\partial x} q(x, t)
+                \]
+            </p>
+            <p class="hText" style="margin-top: 30px;">
+                \[
+                \Rightarrow \frac{\partial}{\partial t} T(x, t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x} q(x,
+                t).
+                \]
+            </p>
+            <p class="hText">At this stage, we enter the realm of Fourier’s Law or also known as the law of heat
+                conduction where it states that</p>
+            <p class="hText">\[q(x,t) = -k\frac{\partial}{\partial x}T(x,t)\]</p>
+            <p class="hText">Where \(k\) is the thermal conductivity, therefore</p>
+            <p class="hText">\[\frac{\partial}{\partial t} T(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x}
+                q(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x}[-k\frac{\partial}{\partial x} T(x,t)]\]</p>
+            <p class="hText" style="margin-top: 30px;">\[\frac{\partial}{\partial t} T(x,t) = \frac{k}{\rho c_v}
+                \frac{\partial^2}{\partial x^2} T(x,t)\]</p>
+            <p class="hText">Where \(\frac{k}{\rho c_v}\) is known as the thermal diffusivity.</p>
+        </div>
+        <!-- One Section (Press Ctrl+/)-->
+        <div id="mathFormula">
+            <h1 class="hMath">Heat Equation in 1-Dimension</h1>
+            <p class="hText">The heat equation may be described through the following: </p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\begin{equation}
+                        \frac{\partial}{\partial t} u(x, t)=k \frac{\partial^2}{\partial x^2} u(x, t)
+                        \end{equation}
+                    </p>
+                </div>
+            </div>
+            <p class="hText">We want to solve the initial value problem of the equation above with \(\begin{equation}
+                \{t \mid t \in \mathbb{R}, t>0\}
+                \end{equation}\) and \(\begin{equation}
+                \{x \mid x \in \mathbb{R}\}
+                \end{equation}\). Consider that we are seeking for solution in the form of the following: </p>
+
+            <div class="inner2MF">
+                <p class="hText">\begin{equation}
+                    u(x, t)=\Psi(x) \varphi(t)
+                    \end{equation}
+                </p>
+            </div>
+            <p class="hText">where the above heat equation is generated through the product of the independent function
+                of
+                space \(\Psi(x)\) and a function of time \(\varphi(t)\) </p>
+            <p class="hText" style="margin-top: 100px;">Note that</p>
+            <div class="inner2MF">
+                <p class="hText">\begin{equation}
+                    \frac{\partial}{\partial t} u(x, t)=\frac{\partial}{\partial t}[\Psi(x) \varphi(t)]=\Psi(x)
+                    \frac{d}{d
+                    t} \varphi(t)
+                    \end{equation}
+                </p>
+            </div>
+            <p class="hText">And</p>
+            <div class="inner2MF">
+                <p class="hText">
+                    \[
+                    \frac{\partial^2}{\partial x^2} u(x,t) = \frac{\partial^2}{\partial x^2} \left[ \psi(x) \phi(t)
+                    \right]
+                    = \phi(t) \frac{d^2}{dx^2} \psi(x)
+                    \]
+                </p>
+            </div>
+            <p class="hText">Therefore</p>
+            <div class="inner2MF">
+                <p class="hText">\[
+                    \frac{\partial}{\partial t} u(x,t) = k \frac{\partial^2}{\partial x^2} u(x,t) = \psi(x) \frac{d}{dt}
+                    \phi(t) = k \phi(t) \frac{d^2}{dx^2} \psi(x)
+                    \]
+                </p>
+            </div>
+            <p class="hText">From</p>
+            <div class="inner2MF">
+                <p class="hText">\[
+                    \psi(x) \frac{d}{dt} \phi(t) = k \phi(t) \frac{d^2}{dx^2} \psi(x)
+                    \]
+                </p>
+            </div>
+            <p class="hText">Assume there is a constant, \( \lambda\) where it is known as a constant with the following
+                definition:</p>
+            <div class="inner2MF">
+                <p class="hText">\[
+                    -\lambda = \frac{1}{k} \phi(t) \frac{d}{dt} \phi(t) = \frac{1}{\psi(x)} \frac{d^2}{dx^2} \psi(x),
+                    \quad \lambda > 0
+                    \]
+                </p>
+            </div>
+            <p class="hText" style="font-weight: bold; color: white;">Solving for \(\Psi(x)\)</p>
+            <p class="hText">Note that from the equation \(-\lambda = \frac{1}{k} \phi(t) \frac{d}{dt} \phi(t)\) we may
+                determine the following:</p>
+            <div class="inner2MF">
+                <p class="hText">\[\Rightarrow \frac{d^2}{d x^2} \Psi(x)-\lambda \Psi(x)=\frac{d^2}{d x^2} \Psi(x)+(0)
+                    \frac{d}{d x} \Psi(x)+\lambda \Psi(x)=0 \]</p>
+            </div>
+            <p class="hText" style="margin-top: 40px;">We recall again our understanding on Ordinary Differential
+                Equations,
+                particularly linear second order constant equations where we are interested to find the solution for the
+                above problem. </p>
+            <p class="hText" style="margin-top: 50px;">At the end we arrive at the real solution for \(\phi(x)\) where
+                it is
+                known as</p>
+            <div class="inner2MF">
+                <p class="hText">\[\operatorname{Re}[\Psi(x)]=a_1 \cos (\sqrt{\lambda} x)+a_2 \sin (\sqrt{\lambda} x)\]
+                </p>
+            </div>
+            <p class="hText" style="font-weight: bold; color: white; margin-top: 30px;">Solving for \(\varphi(t)\)</p>
+            <p class="hText">Same goes for the function of time where we determine the following:</p>
+            <div class="inner2MF">
+                <p class="hText">\[-\lambda=\frac{1}{k \varphi(t)} \frac{d}{d t} \varphi(t)\]</p>
+                <p class="hText">\[\Rightarrow-\lambda k=\frac{1}{\varphi(t)} \frac{d}{d t} \varphi(t)\]</p>
+            </div>
+            <p class="hText">Solving the above differential equation results the following:</p>
+            <div class="inner2MF">
+                <p class="hText">\[\varphi(t)=\exp \left(-\lambda k t+\alpha_2\right)=\exp \left(\alpha_2\right) \exp
+                    (-\lambda k t)=a_3 \exp (-\lambda k t)\]</p>
+            </div>
+        </div>
+
+        <div id="mathFormula">
+            <h1 class="hMath">Example 1</h1>
+            <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[\frac{du}{dt}-\frac{4}{\pi^2}\frac{d^2u}{dx^2}=0,\; 0\leq x \leq 1, \; 0\leq t\]
+                    </p>
+                    <p class="hText">
+                        \[u(0,t)=u(4,t)=0,\quad 0\leq x \leq1\]
+                    </p>
+                </div>
+            </div>
+            <div class="hText">
+                <p>For example, given that the uniform space step \(h\) = 0.2 and uniform time step \(\Delta t\) = 0.1,
+                    and we have
+                    to compare \(t\) = 0.4 to the actual solution which is: </p>
+                <p>\[u(x,t) = e^{-t}sin\left({\frac{\pi x}{2}}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi
+                    x}{4}\right)\]</p>
+                <p>Firstly, we will use finite difference method to approximate the solution at discrete points by
+                    setting up the
+                    spatial grid and time steps.</p>
+                <p>Therefore, we have arrived at the following information:</p>
+                <p>\[x_i = ih = 0.2i,\; 0\leq i \leq 5\]</p>
+                <p>Therefore, the total time step that should be calculated is</p>
+                <p>\[j = \frac{t}{\Delta t}=\frac{0.4}{0.1}=4\]</p>
+                <p>Which means that we have 4 time steps to compute</p>
+                <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
+                    any
+                    specific time \(j+1\) where the following algorithm applies</p>
+                <p>\[u_i^{j+1} = u_i^j + \frac{k\Delta t}{(\Delta x)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>\[u_i^{j+1} = u_i^j + \frac{4(0.1)}{\pi^2(0.2)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>\[u_i^{j+1} = u_i^j + 1.013211836(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
+                <p>\[u(x,0) = sin\left(\frac{\pi x}{4}\right)\left(1+2cos\left(\frac{\pi x}{4}\right)\right)\]</p>
+                <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
+                <p>\[x_1 =0.2, \qquad u_1(0) = sin\left(\frac{\pi (0.2)}{4}\right)\left(1+2cos\left(\frac{\pi
+                    (0.2)}{4}\right)\right) = 0.465451459\]</p>
+                <p>\[x_2 =0.4, \qquad u_2(0) = sin\left(\frac{\pi (0.4)}{4}\right)\left(1+2cos\left(\frac{\pi
+                    (0.4)}{4}\right)\right) = 0.896802247\]</p>
+                <p>\[x_3 =0.6, \qquad u_3(0) = sin\left(\frac{\pi (0.6)}{4}\right)\left(1+2cos\left(\frac{\pi
+                    (0.6)}{4}\right)\right) = 1.263007494\]</p>
+                <p>\[x_4 =0.8, \qquad u_4(0) = sin\left(\frac{\pi (0.8)}{4}\right)\left(1+2cos\left(\frac{\pi
+                    (0.8)}{4}\right)\right) = 1.538841769\]</p>
+                <p>\[x_5 =1.0, \qquad u_5(0) = sin\left(\frac{\pi (1.0)}{4}\right)\left(1+2cos\left(\frac{\pi
+                    (1.0)}{4}\right)\right) = 1.707106781\]</p>
+                <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
+                    time step. For each time step, we update the temperature at each interior grid points
+                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition u_0^j = u_5^j = 0 for all time steps.</p>
+                <p>To compute \(n\) = for \(i = 1,2,3,4\)</p>
+                <p>\[u_1^1 = u_1^0 + 1.013211836(u_0^0 - 2u_1^0 + u_2^0)\]</p>
+                <p>\[u_1^1 = 0.465451459 + 1.013211836(0 - 2(0.465451459) + 0.896802247)\]</p>
+                <p>\[u_1^1 = 0.430900255\]</p>
+                <p>\[u_2^1 = 0.830796015\]</p>
+                <p>\[u_3^1 = 1.171442555\]</p>
+                <p>\[u_4^1 = 1.429851319\]</p>
+                <p>\[u_5^1 = - 0.193042117\]</p>
+
+                <p class="hText">We can have a table to conclude all the calculation as below:</p>
+                <div style="display: flex; justify-content: center;">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td rowspan="5" style="border: 1px solid white; padding: 10px; text-align: center;">\(j =
+                                2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_1^2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.399486134</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_2^2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.770764004</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_3^2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.088118267</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_4^2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.476306338</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_5^2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.646885279</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5" style="border: 1px solid white; padding: 10px; text-align: center;">\(j =
+                                3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_1^3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.370905187</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_2^3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.716127967</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_3^3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.818522355</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_4^3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3.260030065</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_5^3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-2.173001255</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5" style="border: 1px solid white; padding: 10px; text-align: center;">\(j =
+                                4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_1^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.344883468</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_2^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-1.18858171</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_3^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4.868841102</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_4^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-6.37721916</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_5^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5.533520975</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Then we can find the exact solution at \(t = 0.4\) by using:</p>
+                <p>\[u(x,t) = e^{-t}sin\left(\frac{\pi x}{2}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi x}{4}\right)\]</p>
+                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,4,5\), therefore</p>
+                <p>\[u(x_0,0.4) = e^{-0.4}sin\left(\frac{\pi (0)}{2}\right) + e^{\frac{-0.4}{4}}sin\left(\frac{\pi (0)}{4}\right)\]</p>
+                <p>\[u(0,0.4) = 0\]</p>
+                <p>\[u(0.2,0.4) = 0.348688043\]</p>
+                <p>\[u(0.4,0.4) = 0.673614377\]</p>
+                <p>\[u(0.6,0.4) = 0.953087901\]</p>
+                <p>\[u(0.8,0.4) = 1.169362338\]</p>
+                <p>\[u(1,0.4) = 1.31013672\]</p>
+                <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
+                <p>\[\text{Error}_i = |u_i^4 - u(x_i,0.4)|\]</p>
+                <p>Here is the list of all \(u_i^4,u(x_i,0.4)\) and the error:</p>
+               
+                <div style="display: flex; justify-content: center;">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(i\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u(x_i,0.4)\)</td>
+                                <td style="border: 1px solid white; padding: 10px; text-align: center;">\(Error_i = |u_i^4 - u(x_i,0.4)|\)</td>
+                            </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.344883468</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.348688043</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.003804575</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-1.18858171</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.673614377</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.862196087</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4.868841102</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.953087901</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3.915753201</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-6.37721916</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.169362338</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7.546581497</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5.533520975</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.31013672</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4.223384255</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+    </main>
+
+    <div id="particles-js" class="particles"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particles-config.js"></script>
+</body>
+
+</html>
