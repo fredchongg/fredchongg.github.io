@@ -15,7 +15,7 @@
     <main>
         <div class="hero-section">
             <div class="main-title">
-                <h1>The Algorithms Behind Heat Equation</h1>
+                <h1>The Algorithms Behind Heat Equations</h1>
                 <h2>Explained by Partial Differential Equations</h2>
             </div>
         </div>
@@ -29,14 +29,16 @@
                     </div>
                     <h3>Frederick Chong Yew Shen</h3>
                     <p class="member-id">293228</p>
+                    <h3 style="margin-top: 20px;">Software Scientist and Engineer</h3>
                 </div>
 
                 <div class="team-card">
                     <div class="member-image">
                         <img src="images/newton.jpg" alt="Norman Mohammad bin Sumar">
                     </div>
-                    <h3>Norman Mohammad bin Sumar</h3>
+                    <h3>Norman Mohammad Bin Sumar</h3>
                     <p class="member-id">294807</p>
+                    <h3 style="margin-top: 20px;">Theoretical and Principal Scientist</h3>
                 </div>
 
                 <div class="team-card">
@@ -45,6 +47,7 @@
                     </div>
                     <h3>Alban Heng Yu Cheng</h3>
                     <p class="member-id">291958</p>
+                    <h3 style="margin-top: 20px;">Research Scientist and Engineer</h3>
                 </div>
 
                 <div class="team-card">
@@ -53,6 +56,7 @@
                     </div>
                     <h3>Kee Chin Yuan</h3>
                     <p class="member-id">294093</p>
+                    <h3 style="margin-top: 40px;">Systems Scientist and Engineer</h3>
                 </div>
             </div>
         </section>
@@ -63,10 +67,10 @@
                     <img src="images/PDE.png" alt="3D PDE Graph">
                 </div>
                 <div class="pde-content">
-                    <h2>What Is Partial Differential Equation</h2>
-                    <p>A partial differential equation (PDE) is a mathematical equation that involves a function with
+                    <h2>What Is Partial Differential Equation?</h2>
+                    <p> Partial Differential Equation (PDE) is a mathematical equation that involves a function with
                         multiple variables and its partial derivatives, describing how the function changes with respect
-                        to each variable independently. PDEs are used to model complex phenomena that depend on several
+                        to each variable independently. PDEs are used to model complex phenomenons that depend on several
                         factors, like time and space, such as heat conduction, wave propagation, fluid flow, and many
                         physical and engineering processes. For example, the heat equation—a well-known PDE—describes
                         how temperature changes over time across a spatial region. In essence, PDEs allow us to capture
@@ -77,10 +81,10 @@
 
 
         <div id="mathFormula">
-            <h1 class="hMath">How to identify the Order and Degree of a PDE</h1>
-            <p class="hText">Order of PDE: the order of the highest partial derivative occurs in PDE. </p>
-            <p class="hText">Degree of a PDE: the degree of the highest order derivative which occurs in it after the
-                equation has been rationalized</p>
+            <h1 class="hMath">How to Identify the Order and Degree of a PDE</h1>
+            <p class="hText">Order of PDE: The order of the highest partial derivative that occurs in PDE. </p>
+            <p class="hText">Degree of a PDE: The degree of the highest order derivative which occurs in it after the
+                equation has been rationalized.</p>
             <div id="math2Formula">
                 <div class="inner2MF">
                     <p class="hText">Example of 1st Order and Degree 1:</p>
@@ -94,7 +98,7 @@
                 </div>
             </div>
 
-            <h1 class="hMath" style="margin-top: 50px;">How to differentiate between Linear PDE and Non-Linear PDE</h1>
+            <h1 class="hMath" style="margin-top: 50px;">How to Differentiate Between Linear PDE and Non-Linear PDE</h1>
             <p class="hText">A PDE is said to be linear if the dependent variable, z and its partial derivatives are
                 only in
                 the first degree and not multiplied. Otherwise, a PDE is said to be non-linear. </p>
@@ -123,8 +127,8 @@
         </div>
 
         <div id="mathFormula">
-            <p class="hMath">Classification of 2nd order linear partial
-                differential equations for 2 independent variables </p>
+            <p class="hMath">Classification of 2nd Order Linear Partial
+                Differential Equations for 2 Independent Variables </p>
             <p class="hText">Suppose \(u(x,t)\) is the solution of PDE and</p>
             <p class="hText">\[
                 A u_{xx} + B u_{xy} + C u_{yy} + F(x, y, u, u_x, u_y) = g(x, y)
@@ -355,7 +359,7 @@
             <div class="inner2MF">
                 <p class="hText">\[
                     -\lambda = \frac{1}{k} \varphi(t) \frac{d}{dt} \varphi(t) = \frac{1}{\psi(x)} \frac{d^2}{dx^2} \Psi(x),
-                    \quad \lambda > 0
+                    \quad \lambda > 0
                     \]
                 </p>
             </div>
@@ -404,12 +408,44 @@
         </div>
 
         <div id="mathFormula">
+            <h1 class="hMath">Numerical Techniques (Forward Difference)</h1>
+            <div class="hText">
+                <p >The numerical technique that we will be using to estimate the actual solution of a given problem in heat transfer will be based on the following: </p>
+                <p>Consider the Taylor Series expansion about \(t = t_j\) and holding \(x\) fixed</p>
+                <p>\[u(x_i,t_j + \Delta t) = \sum_{l=0}^nc_l[(t_j + \Delta t) - t_j]^l + \frac{[(t_j + \Delta t)]^{l+1}}{(l+1)!}\frac{\partial^{l+1}}{\partial t^l} u(x_i,t_{\lambda})\]</p>
+                <p>\[= \sum_{l=0}^n c_l (\Delta t)^l + \frac{(\Delta t)^{l+1}}{(l+1)!} \frac{\partial^{l+1}}{\partial t^l} u(x_i,t_\lambda), \text{where } c_l = \frac{1}{l!} \frac{\partial^l}{\partial t^l} u(x_i,t_j)\]</p>
+                <p>\[= \sum_{l=0}^n \frac{\Delta t^l}{l!}\frac{\partial^l}{\partial t^l}u(x_i,t_j) + \frac{\Delta t^{n+1}}{(n+1)!}\frac{\partial^{n+1}}{\partial t^{n+1}}u(x_i,t_\lambda),\; t_{\lambda} \in [t_j,t_{j+1}]\]</p>
+                <p>Note that \(t_j + \Delta t = t_{j+1} \Rightarrow \Delta t = t_{j+1} - t_j\; for\; \forall j, \;j= 0,1,2,...\)</p>
+                <p>At \(n = 1\)</p>
+                <p>\[u(x_i,t_j + \Delta t) = u(x_i, t_{j+1}) = \sum_{l=0}^1\frac{(\Delta t)^l}{l!}\frac{\partial^l}{\partial t^l}u(x_i,t_j)+\frac{(\Delta t)^2}{(2)!}\frac{\partial^2}{\partial t^2}u(x_i,t_{\lambda})\]</p>
+                <p>\[= u(x_i,t_j) + (\Delta t)\frac{\partial}{\partial t}u(x_i,t_j) + \frac{(\Delta t)^2}{(2)!}\frac{\partial^2}{\partial t^2}u(x_i,t_\lambda)\]</p>
+                <p>\[\Rightarrow \frac{\partial}{\partial t}u(x_i,t_j) = \frac{u(x_i,t_{j+1})-u(x_i,t_j)}{(\Delta t)} - \frac{\Delta t}{(2)!}\frac{\partial^2}{\partial t^2}u(x_i,t_\lambda)\]</p>
+                <p>The numerical technique approximates the partial derivative of \(u(x,t)\) with respect to time \(t\) as the following: </p>
+                <p>\[\frac{\partial}{\partial t}u(x_i,t_j) \approx \frac{u(x_i,t_{j+1})-u(x_i,t_j)}{(\Delta t)}\]</p>
+                <p>Recall that the second derivative midpoint theorem also gives us the following definition</p>
+                <p>\[\frac{\partial^2}{\partial x^2}u(x_i,t_j) = \frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2} - \frac{(\Delta x)^2}{12}\frac{\partial^4}{\partial x^4}u(x_i,t_j)\]</p>
+                <p>Then the numerical approximation for the second partial derivative \(u(x_i,t_j)\) with respect to \(x\) will be</p>
+                <p>\[\frac{\partial^2}{\partial x^2}u(x_i,t_j) \approx \frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2}\]</p>
+                <p>Observe the heat equation that we have derived earlier is in the form of the following partial differential equations:</p>
+                <p>\[\frac{\partial}{\partial t}u(x,t) = k\frac{\partial^2}{\partial x^2}u(x,t)\]</p>
+                <p>Therefore</p>
+                <p>\[\left[\frac{\partial}{\partial t}u(x,t) = k\frac{\partial^2}{\partial x^2}u(x,t)\right]\]</p>
+                <p>\[\approx \left[\frac{u(x_i,t_{j+1})-u(x_i,t_j)}{(\Delta t)} \approx k\frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2}\right]\]</p>
+                <p>\[\Rightarrow u(x_i,t_{j+1}) \approx k\frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2}(\Delta t) + u(x_i,t_j)\]</p>
+                <p>\[= u(x_i,t_j) + k\frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2}(\Delta t)\]</p>
+                <p>So the approximation for the solution of \(u(x_i,t_{j+1})\) is</p>
+                <p>\[u(x_i,t_{j+1}) \approx u(x_i,t_j) + k\frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2}(\Delta t)\]</p>
+            </div>
+        </div>
+
+
+        <div id="mathFormula">
             <h1 class="hMath">Example 1</h1>
             <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
 
             <div id="math2Formula">
                 <div class="inner2MF">
-                    <p class="hText">\[\frac{du}{dt}-\frac{4}{\pi^2}\frac{d^2u}{dx^2}=0,\; 0\leq x \leq 1, \; 0\leq t\]
+                    <p class="hText">\[\frac{du}{dt}-\frac{4}{\pi^2}\frac{d^2u}{dx^2}=0,\; 0\leq x \leq 4, \; 0\leq t\]
                     </p>
                     <p class="hText">
                         \[u(0,t)=u(4,t)=0,\quad 0\leq x \leq1\]
@@ -417,7 +453,7 @@
                 </div>
             </div>
             <div class="hText">
-                <p>For example, given that the uniform space step \(h\) = 0.2 and uniform time step \(\Delta t\) = 0.1,
+                <p>For example, given that the uniform space step \(h\) = 0.2 and uniform time step \(\Delta t\) = 0.04,
                     and we have
                     to compare \(t\) = 0.4 to the actual solution which is: </p>
                 <p>\[u(x,t) = e^{-t}sin\left({\frac{\pi x}{2}}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi
@@ -426,16 +462,16 @@
                     setting up the
                     spatial grid and time steps.</p>
                 <p>Therefore, we have arrived at the following information:</p>
-                <p>\[x_i = ih = 0.2i,\; 0\leq i \leq 5\]</p>
+                <p>\[x_i = ih = 0.2i,\; 0\leq i \leq 20\]</p>
                 <p>Therefore, the total time step that should be calculated is</p>
-                <p>\[j = \frac{t}{\Delta t}=\frac{0.4}{0.1}=4\]</p>
-                <p>Which means that we have 4 time steps to compute</p>
+                <p>\[j = \frac{t}{\Delta t}=\frac{0.4}{0.04}=10\]</p>
+                <p>Which means that we have 10 time steps to compute</p>
                 <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
                     any
                     specific time \(j+1\) where the following algorithm applies</p>
                 <p>\[u_i^{j+1} = u_i^j + \frac{k\Delta t}{(\Delta x)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
-                <p>\[u_i^{j+1} = u_i^j + \frac{4(0.1)}{\pi^2(0.2)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
-                <p>\[u_i^{j+1} = u_i^j + 1.013211836(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>\[u_i^{j+1} = u_i^j + \frac{4(0.04)}{\pi^2(0.2)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>\[u_i^{j+1} = u_i^j + 0.405284735 (u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
                 <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
                 <p>\[u(x,0) = sin\left(\frac{\pi x}{4}\right)\left(1+2cos\left(\frac{\pi x}{4}\right)\right)\]</p>
                 <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
@@ -449,92 +485,303 @@
                     (0.8)}{4}\right)\right) = 1.538841769\]</p>
                 <p>\[x_5 =1.0, \qquad u_5(0) = sin\left(\frac{\pi (1.0)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (1.0)}{4}\right)\right) = 1.707106781\]</p>
+                <p>\[.\]</p>
+                <p>\[.\]</p>
+                <p>\[.\]</p>
+                <p>\[.\]</p>
+                <p>\[x_{18} =3.6, \qquad u_18(0) = sin\left(\frac{\pi (3.6)}{4}\right)\left(1+2cos\left(\frac{\pi
+                    (3.6)}{4}\right)\right) = -0.278768258\]</p>
+                <p>\[x_{19} =3.8, \qquad u_19(0) = sin\left(\frac{\pi (3.8)}{4}\right)\left(1+2cos\left(\frac{\pi
+                        (3.8)}{4}\right)\right) = -0.152582529\]</p>
+                <p>\[u(x_{20},0) =0\]</p>
                 <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
                     time step. For each time step, we update the temperature at each interior grid points
-                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition u_0^j = u_5^j = 0 for all time steps.</p>
-                <p>To compute \(n\) = for \(i = 1,2,3,4\)</p>
-                <p>\[u_1^1 = u_1^0 + 1.013211836(u_0^0 - 2u_1^0 + u_2^0)\]</p>
-                <p>\[u_1^1 = 0.465451459 + 1.013211836(0 - 2(0.465451459) + 0.896802247)\]</p>
-                <p>\[u_1^1 = 0.430900255\]</p>
-                <p>\[u_2^1 = 0.830796015\]</p>
-                <p>\[u_3^1 = 1.171442555\]</p>
-                <p>\[u_4^1 = 1.429851319\]</p>
-                <p>\[u_5^1 = - 0.193042117\]</p>
+                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition \(u_0^j = u_{20}^j = 0\) for all time steps.</p>
+                <p>To compute \(n\) = for \(i = 1,2,3,4,....,18,19\)</p>
+                <p>\[u_1^1 = u_1^0 + 0.405284735  (u_0^0 - 2u_1^0 + u_2^0)\]</p>
+                <p>\[u_1^1 = 0.465451459+ 0.405284735 (0.896802247- 2(0.465451459)+0)\]</p>
+                <p>\[u_1^1 = 0.451630978\]</p>
+                <p>\[u_2^1 = 0.870399754\]</p>
+                <p>\[u_3^1 = 1.226381518\]</p>
+                <p>\[u_4^1 = 1.495245589\]</p>
+                <p>\[u_5^1 = 1.660378147\]</p>
+                <p>\[.\]</p>
+                <p>\[.\]</p>
+                <p>\[.\]</p>
+                <p>\[u_{18}^1 = -0.258533408\]</p>
+                <p>\[u_{19}^1 = -0.141884309\]</p>
 
                 <p class="hText">We can have a table to conclude all the calculation as below:</p>
-                <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr>
-                            <td rowspan="5" style="border: 1px solid white; padding: 10px; text-align: center;">\(j =
-                                2\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_1^2\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.399486134</td>
+                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(n = 2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^2\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_2^2\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.770764004</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.438312429</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_3^2\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.088118267</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.844953136</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_4^2\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.476306338</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.191074047</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_5^2\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.646885279</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.45320479</td>
                         </tr>
                         <tr>
-                            <td rowspan="5" style="border: 1px solid white; padding: 10px; text-align: center;">\(j =
-                                3\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_1^3\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.370905187</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.615293808</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_2^3\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.716127967</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.67004302</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_3^3\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.818522355</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.61941123</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_4^3\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3.260030065</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.474242189</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_5^3\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-2.173001255</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.253058167</td>
                         </tr>
                         <tr>
-                            <td rowspan="5" style="border: 1px solid white; padding: 10px; text-align: center;">\(j =
-                                4\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_1^4\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.344883468</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.980140679</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_2^4\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-1.18858171</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">11</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.683088875</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_3^4\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4.868841102</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">12</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.39009617</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_4^4\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-6.37721916</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">13</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.12721225</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_5^4\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5.533520975</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">14</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.084142088</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">15</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.229165567</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">16</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.300980318</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">17</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.301124933</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">18</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.239192883</td>
+                        </tr>
+                        <tr>
+                            
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">19</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.131656863</td>
                         </tr>
                     </table>
                 </div>
+
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr></tr>
+                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(n = 3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^3\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.425476364</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.820425387</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.157034114</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.412659406</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.571790624</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.627333709</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.581096726</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.443434478</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.232091383</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.970359409</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">11</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.684733966</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">12</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.402298801</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">13</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.148096403</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">14</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.057259204</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">15</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.199495187</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">16</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.271933506</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">17</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.275966208</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">18</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.22071029</td>
+                        </tr>
+                        <tr>
+                            
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">19</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.121881054</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>\[...\]</p>
+
+                
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr></tr>
+                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(n = 9\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.347653286</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.671643084</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.950366977</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.166149225</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.306734413</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.366268771</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.345678463</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.252412629</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.099580415</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.904569773</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">11</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.68728562</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">12</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.468181325</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">13</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.266276675</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">14</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.097355866</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">15</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.027479573</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">16</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.102763681</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">17</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.129034811</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">18</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.11258822</td>
+                        </tr>
+                        <tr>
+                            
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">19</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.064641509</td>
+                        </tr>
+                    </table>
+                        
+                    
+                </div>
+                    
+                
+
                 <p>Then we can find the exact solution at \(t = 0.4\) by using:</p>
                 <p>\[u(x,t) = e^{-t}sin\left(\frac{\pi x}{2}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi x}{4}\right)\]</p>
-                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,4,5\), therefore</p>
+                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,...,20\), therefore</p>
                 <p>\[u(x_0,0.4) = e^{-0.4}sin\left(\frac{\pi (0)}{2}\right) + e^{\frac{-0.4}{4}}sin\left(\frac{\pi (0)}{4}\right)\]</p>
                 <p>\[u(0,0.4) = 0\]</p>
                 <p>\[u(0.2,0.4) = 0.348688043\]</p>
@@ -542,18 +789,23 @@
                 <p>\[u(0.6,0.4) = 0.953087901\]</p>
                 <p>\[u(0.8,0.4) = 1.169362338\]</p>
                 <p>\[u(1,0.4) = 1.31013672\]</p>
+                <p>\[.\]</p>
+                <p>\[.\]</p>
+                <p>\[u(3.6,0.4) = -0.114394098\]</p>
+                <p>\[u(3.8,0.4) = -0.065592528\]</p>
+                <p>\[u(4,0.4) = 0\]</p>
                 <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
-                <p>\[\text{Error}_i = |u_i^4 - u(x_i,0.4)|\]</p>
-                <p>Here is the list of all \(u_i^4,u(x_i,0.4)\) and the error:</p>
+                <p>\[\text{Error}_i = |u_i^{10} - u(x_i,0.4)|\]</p>
+                <p>Here is the list of all \(u_i^{10},u(x_i,0.4)\) and the error:</p>
                
-                <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(i\)</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^4\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">i</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u(x_i,0.4)\)</td>
-                                <td style="border: 1px solid white; padding: 10px; text-align: center;">\(Error_i = |u_i^4 - u(x_i,0.4)|\)</td>
-                            </tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(Error_i = |u_i^{10} - u(x_i,0.4)|\)</td>
+                        </tr>
                         <tr>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
@@ -562,41 +814,711 @@
                         </tr>
                         <tr>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.344883468</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.347653286</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">0.348688043</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.003804575</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001034757</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-1.18858171</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.671643084</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">0.673614377</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.862196087</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001971292</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4.868841102</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.950366977</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">0.953087901</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3.915753201</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002720923</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-6.37721916</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.166149225</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">1.169362338</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7.546581497</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.003213113</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5.533520975</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.306734413</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">1.31013672</td>
-                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4.223384255</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.003402307</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.366268771</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.369541096</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.003272325</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.345678463</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.348516352</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002837888</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.252412629</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.25455576</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002143131</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.099580415</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.100837654</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001257238</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.904569773</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.904837418</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.000267645</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">11</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.68728562</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.686557082</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.000728538</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">12</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.468181325</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.466547285</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001634039</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">13</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.266276675</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.263915734</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002360941</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">14</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.097355866</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.094516601</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002839265</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">15</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.027479573</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.030503372</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.003023799</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">16</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.102763681</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.105662158</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002898477</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">17</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.129034811</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.131512717</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.002477906</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">18</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.11258822</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.114394098</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001805878</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">19</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.064641509</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">-0.065592528</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.000951019</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">20</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>    
+
+
+            </div>
+        </div>
+
+        <div id="mathFormula">
+            <h1 class="hMath">Example 2</h1>
+            <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0, \quad 0 < x < \pi, \quad 0 < t;\]
+                    </p>
+                    <p class="hText">
+                        \[u(0,t) = u(\pi,t) = 0, \quad 0 < t,\]
+                    </p>
+                    <p class="hText">
+                        \[u(x,0) = \sin(x), \quad 0 \leq x \leq \pi.\]
+                    </p>
+                </div>
+            </div>
+            <div class="hText">
+                <p>For example, given that the uniform space step \(h\) = \(\frac{\pi}{10}\) and uniform time step \(\Delta t\) = 0.05,
+                    and we have
+                    to compare \(t\) = 0.5 to the actual solution which is: </p>
+                <p>\[u(x,t) = e^{-t}sin(x)\]</p>
+                <p>Firstly, we will use finite difference method to approximate the solution at discrete points by
+                    setting up the
+                    spatial grid and time steps.</p>
+                <p>Therefore, we have arrived at the following information:</p>
+                <p>\[x_i = ih = \frac{\pi}{10}i,\; 0\leq i \leq 10\]</p>
+                <p>Therefore, the total time step that should be calculated is</p>
+                <p>\[j = \frac{t}{\Delta t}=\frac{0.5}{0.05}=10\]</p>
+                <p>Which means that we have 10 time steps to compute</p>
+                <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
+                    any
+                    specific time \(j+1\) where the following algorithm applies</p>
+                <p>\[u_i^{j+1} = u_i^j + \frac{k\Delta t}{(\Delta x)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>\[u_i^{n+1} = u_i^n + \frac{0.05}{(\frac{\pi}{10})^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)\]</p>
+                <p>\[u_i^{n+1} = u_i^n + \frac{5}{\pi^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)\]</p>
+                <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
+                <p>\[u(x,0) = sin(x)\]</p>
+                <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(i\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(x_i\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^0\)</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.309017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.587785</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.809017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{2\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.951057</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{2}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.951057</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{7\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.809017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{4\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.587785</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{9\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.309017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\pi\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
                         </tr>
                     </table>
                 </div>
+                <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
+                    time step. For each time step, we update the temperature at each interior grid points
+                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition \(u_0^j = u_{10}^j = 0\) for all time steps.</p>
+                <p>To compute \(n\) = for \(i = 1,2,3,4,....,9\)</p>
+                <p>When \(n = 9\)</p>
+                
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.601325</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                        </tr>
+                    </table>
+                </div>
+
+                
+                    
+                
+
+                <p>Then we can find the exact solution at \(t = 0.5\) by using:</p>
+                <p>\[u(x,t) = e^{-t}sin\left(\frac{\pi x}{2}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi x}{4}\right)\]</p>
+                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,...,10\), therefore</p>
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u(x,0.5)\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{2\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{2}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.606531</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{7\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{4\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{9\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\pi\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
+                <p>\[\text{Error}_i = |u_i^{10} - u(x_i,0.5)|\]</p>
+                <p>Here is the list of all \(u_i^{10},u(x_i,0.5)\) and the error:</p>
+               
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">i</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u(x_i,0.5)\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(Error_i = |u_i^{10} - u(x_i,0.5)|\)</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001609</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.00306</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004211</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004951</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.601325</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.606531</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.005205</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004951</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004211</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.00306</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001609</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>   
             </div>
-
-
         </div>
+        
 
+        <div id="mathFormula">
+            <h1 class="hMath">Example 3</h1>
+            <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0, \quad 0 < x < 2, \quad 0 < t;\]
+                    </p>
+                    <p class="hText">
+                        \[u(0,t) = u(2,t) = 0, \quad 0 < t,\]
+                    </p>
+                    <p class="hText">
+                        \[u(x,0) = \sin(2\pi x), \quad 0 \leq x \leq 2.\]
+                    </p>
+                </div>
+            </div>
+            <div class="hText">
+                <p>For example, given that the uniform space step \(h\) = \(0.4\) and uniform time step \(\Delta t\) = 0.05,
+                    and we have
+                    to compare \(t\) = 0.5 to the actual solution which is: </p>
+                <p>\[u(x,t) = e^{-4\pi^2 t}sin(2\pi x)\]</p>
+                <p>Firstly, we will use finite difference method to approximate the solution at discrete points by
+                    setting up the
+                    spatial grid and time steps.</p>
+                <p>Therefore, we have arrived at the following information:</p>
+                <p>\[x_i = ih = 0.4i,\; 0\leq i \leq 5\]</p>
+                <p>Therefore, the total time step that should be calculated is</p>
+                <p>\[j = \frac{t}{\Delta t}=\frac{0.5}{0.05}=10\]</p>
+                <p>Which means that we have 10 time steps to compute</p>
+                <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
+                    any
+                    specific time \(j+1\) where the following algorithm applies</p>
+                <p>\[u_i^{j+1} = u_i^j + \frac{k\Delta t}{(\Delta x)^2}(u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
+                <p>\[u_i^{n+1} = u_i^n + \frac{0.05}{(\frac{\pi}{10})^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)\]</p>
+                <p>\[u_i^{n+1} = u_i^n + \frac{5}{\pi^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)\]</p>
+                <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
+                <p>\[u(x,0) = sin(x)\]</p>
+                <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(i\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(x_i\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^0\)</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.309017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.587785</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.809017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{2\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.951057</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{2}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.951057</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{7\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.809017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{4\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.587785</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{9\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.309017</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\pi\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
+                    time step. For each time step, we update the temperature at each interior grid points
+                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition \(u_0^j = u_{10}^j = 0\) for all time steps.</p>
+                <p>To compute \(n\) = for \(i = 1,2,3,4,....,9\)</p>
+                <p>When \(n = 9\)</p>
+                
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.601325</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                        </tr>
+                    </table>
+                </div>
+
+                
+                    
+                
+
+                <p>Then we can find the exact solution at \(t = 0.5\) by using:</p>
+                <p>\[u(x,t) = e^{-t}sin\left(\frac{\pi x}{2}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi x}{4}\right)\]</p>
+                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,...,10\), therefore</p>
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u(x,0.5)\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{2\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{2}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{3\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.606531</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{7\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{4\pi}{5}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{9\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\pi\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(\frac{\pi}{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
+                <p>\[\text{Error}_i = |u_i^{10} - u(x_i,0.5)|\]</p>
+                <p>Here is the list of all \(u_i^{10},u(x_i,0.5)\) and the error:</p>
+               
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">i</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u(x_i,0.5)\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(Error_i = |u_i^{10} - u(x_i,0.5)|\)</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001609</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.00306</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004211</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004951</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.601325</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.606531</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.005205</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.571894</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.576845</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004951</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">7</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.486482</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.490694</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.004211</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">8</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35345</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.35651</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.00306</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.18582</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.187428</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.001609</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">10</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>   
+            </div>
+        </div>
     </main>
 
     <div id="particles-js" class="particles"></div>
