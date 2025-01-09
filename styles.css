@@ -1,30 +1,63 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+    --secondary-gradient: linear-gradient(135deg, #a8ff78, #78ffd6);
+    --dark-bg: #13151a;
+    --card-bg: #1c1f26;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b9c5;
+    --neon-glow: 0 0 10px rgba(78, 205, 196, 0.2),
+                 0 0 20px rgba(78, 205, 196, 0.1),
+                 0 0 30px rgba(78, 205, 196, 0.1);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #000000;
-    font-family: 'Courier New', monospace;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     min-height: 100vh;
 }
 
-#mathFormula{
-      background-color: #000000;
-      width: 100%; /* Container width is responsive */
-      max-width: 1280px; /* Maximum width */
-      padding: 20px; /* Space inside the container */
-      margin: 20px auto; /* Centers the container */
-      box-sizing: border-box; /* Includes padding/borders in width */
-      overflow: auto; /* Prevents content from overflowing */
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border-radius: 10px; /* Rounded corners */
-      border: 1px solid #4CAF50;
+#mathFormula {
+    position: relative;
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 1280px;
+    padding: 2.5rem;
+    margin: 2rem auto;
+    border-radius: 30px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hMath{
-    font-family: Arial, sans-serif;
-    font-size: clamp(14px, 6vw, 2rem);
-    font-weight: bold;
-    color: #ffffff;
+/* Add this pseudo-element for the gradient border */
+#mathFormula::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background: var(--primary-gradient);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+.hMath {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--neon-glow);
+    letter-spacing: -0.5px;
 }
 
 .calculation-table {
@@ -39,11 +72,10 @@ body {
     padding: 10px;
     text-align: center;
 }
-.hText{
-    font-family: Arial, sans-serif;
-    font-size: clamp(14px, 4vw, 1.20rem);
-    line-height: 1.6;
-    color: #ffffff;
+.hText {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
 }
 
 #math2Formula{
