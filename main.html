@@ -68,7 +68,7 @@
                     <img src="images/PDE.png" alt="3D PDE Graph">
                 </div>
                 <div class="pde-content">
-                    <h2>What Is Partial Differential Equation?</h2>
+                    <h2>WHAT IS PARTIAL DIFFERENTIAL EQUATION?</h2>
                     <p> Partial Differential Equation (PDE) is a mathematical equation that involves a function with
                         multiple variables and its partial derivatives, describing how the function changes with respect
                         to each variable independently. PDEs are used to model complex phenomenons that depend on several
@@ -130,12 +130,12 @@
         <div id="mathFormula">
             <p class="hMath">Classification of 2nd Order Linear Partial
                 Differential Equations for 2 Independent Variables </p>
-            <p class="hText">Suppose \(u(x,t)\) is the solution of PDE and</p>
+            <p class="hText">Suppose \(u(x,t)\) is the solution of a PDE and</p>
             <p class="hText">\[
                 A u_{xx} + B u_{xy} + C u_{yy} + F(x, y, u, u_x, u_y) = g(x, y)
                 \]
             </p>
-            <p class="hText">where \(x\) and \(y\) are independent variable</p>
+            <p class="hText">where \(x\) and \(y\) are independent variables</p>
 
             <div id="math2Formula">
                 <div class="inner2MF">
@@ -149,14 +149,14 @@
                         \]</p>
                 </div>
             </div>
-            <p class="hText">if \(B^2-4AC\lt0\),then the PDE is elliptic</p>
-            <p class="hText">if \(B^2-4AC\gt0\),then the PDE is hyperbolic</p>
-            <p class="hText">if \(B^2-4AC = 0\),then the PDE is parabolic</p>
+            <p class="hText">if \(B^2-4AC\lt0\;\),then the PDE is elliptic</p>
+            <p class="hText">if \(B^2-4AC\gt0\;\),then the PDE is hyperbolic</p>
+            <p class="hText">if \(B^2-4AC = 0\;\),then the PDE is parabolic</p>
         </div>
 
         <div id="mathFormula">
             <h1 class="hMath">What is Heat/Diffusion Equation?</h1>
-            <p class="hText">Imagine that you have a rod as shown below. Say that you are there are heat flows that flow
+            <p class="hText">Imagine that you have a rod as shown below. Say that there are heat flows that flow
                 in
                 and out through this rod. </p>
             <div class="rod-image-container">
@@ -169,7 +169,7 @@
                 independent variables, namely space variable \(x\) and time variable \(t\).
                 We may write this relationship as \(T(x, t), \{x \mid x \in \mathbb{R}, x_0 \leq x \leq x_N\}, \{t \mid
                 t
-                \in \mathbb{R}, t \geq 0\}\) Now, we make several of the following assumptions that lead us towards the
+                \in \mathbb{R}, t \geq 0\}\) . Now, we make several of the following assumptions that lead us towards the
                 solution for \(T(x,t)\):</p>
 
             <ol class="hText">
@@ -179,21 +179,21 @@
                     unit^2\).</li>
                 <li style="margin-top: 5px;">The temperature \(T(x,t)\) is measured in kelvin, \(K\). Also recall that
                     the
-                    conversion from temperature in degree Celsius \(T(K) = T(^\circ\text{C}) + 273\)</li>
+                    conversion from temperature in degree Celsius to Kelvin is \(T(K) = T(^\circ\text{C}) + 273\)</li>
             </ol>
             <p class="hText" style="margin-top: 30px;">From the above information, we may now determine the total mass
                 of
                 the rod for the section \([x,x+\Delta x]\), where</p>
             <div id="math2Formula">
                 <div class="inner2MF">
-                    <p class="hText">\[Total Mass = \int_{x}^{x+\Delta x} \rho A \, dx\]</p>
+                    <p class="hText">\[Total \; Mass = \int_{x}^{x+\Delta x} \rho A \, dx\]</p>
                 </div>
             </div>
             <p class="hText">Now, ask ourself how can this temperature \(T(x,t)\) may be converted into heat? Introduce
                 the
                 following</p>
             <ul class="hText">
-                <li>The specific heat energy requried to heat up a kilogram by one degree kelvin, \(c_v\) and has the
+                <li>The specific heat energy requried to heat up a kilogram by one degree Kelvin, \(c_v\) and has the
                     unit
                     of energy \(kg^{-1}K^{-1}\).</li>
             </ul>
@@ -211,7 +211,7 @@
             </div>
             <p class="hText">Provided that we have the total heat energy, can we measure the instantaneous rate of
                 change of
-                the total heat energy at specific time t? Well, we back to the definition of derivative.</p>
+                the total heat energy at specific time \(t\;\)? Well, we back to the definition of derivative.</p>
             <p class="hText">Note that the derivative of the total heat energy with respect to time from the above
                 equation is </p>
             <div id="math2Formula">
@@ -239,17 +239,17 @@
                 <li style="margin-top: 5px;">\(Aq(x+\Delta x,t)\) is where the heat flows out.</li>
             </ol>
             <p class="hText" style="margin-top: 30px;">We again assume that \(\frac{\partial}{\partial t} T(x,t)\) is
-                continuous, then the Leibniz'Rule may be applied as the following:</p>
+                continuous, then the Leibniz' Rule may be applied as the following:</p>
             <p class="hText" style="margin-top: 30px;">\[
                 \frac{\partial}{\partial t} [\text{Total Heat Energy}] = \rho A c_v \frac{\partial}{\partial t}
                 \int_{x}^{x+\Delta x} T(x, t) \, dx
                 \]</p>
             <p class="hText" style="margin-top: 30px;">\[
-                \rho c_v \frac{\partial}{\partial t} \int_{x}^{x+\Delta x} T(x, t) \, dx = q(x, t) - q(x + \Delta x, t)
+                \Rightarrow \rho c_v \frac{\partial}{\partial t} \int_{x}^{x+\Delta x} T(x, t) \, dx = q(x, t) - q(x + \Delta x, t)
                 \]</p>
             <p class="hText" style="margin-top: 30px;">
                 \[
-                \Rightarrow \rho c_v \int_x^{x+\Delta x} \frac{\partial}{\partial t} T(x, t) \, dx = q(x, t) - q(x +
+                 \rho c_v \int_x^{x+\Delta x} \frac{\partial}{\partial t} T(x, t) \, dx = q(x, t) - q(x +
                 \Delta
                 x, t) = -[q(x + \Delta x, t) - q(x, t)]
                 \]
@@ -285,13 +285,13 @@
             </p>
             <p class="hText">At this stage, we enter the realm of Fourier’s Law or also known as the law of heat
                 conduction where it states that</p>
-            <p class="hText">\[q(x,t) = -k\frac{\partial}{\partial x}T(x,t)\]</p>
+            <p class="hText">\[q(x,t) = -a\frac{\partial}{\partial x}T(x,t)\]</p>
             <p class="hText">Where \(k\) is the thermal conductivity, therefore</p>
             <p class="hText">\[\frac{\partial}{\partial t} T(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x}
-                q(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x}[-k\frac{\partial}{\partial x} T(x,t)]\]</p>
-            <p class="hText" style="margin-top: 30px;">\[\frac{\partial}{\partial t} T(x,t) = \frac{k}{\rho c_v}
+                q(x,t) = -\frac{1}{\rho c_v} \frac{\partial}{\partial x}[-a\frac{\partial}{\partial x} T(x,t)]\]</p>
+            <p class="hText" style="margin-top: 30px;">\[\frac{\partial}{\partial t} T(x,t) = \frac{a}{\rho c_v}
                 \frac{\partial^2}{\partial x^2} T(x,t)\]</p>
-            <p class="hText">Where \(\frac{k}{\rho c_v}\) is known as the thermal diffusivity.</p>
+            <p class="hText">Where \(\frac{a}{\rho c_v}\) is known as the thermal diffusivity.</p>
         </div>
         <!-- One Section (Press Ctrl+/)-->
         <div id="mathFormula">
@@ -300,14 +300,14 @@
 
             <div id="math2Formula">
                 <div class="inner2MF">
-                    <p class="hText">\begin{equation}
-                        \frac{\partial}{\partial t} u(x, t)=k \frac{\partial^2}{\partial x^2} u(x, t)
-                        \end{equation}
+                    <p class="hText">\[
+                        \frac{\partial}{\partial t} u(x, t)=k \frac{\partial^2}{\partial x^2} u(x, t), \;\; k = \frac{a}{\rho c_v}
+                        \]
                     </p>
                 </div>
             </div>
             <p class="hText">We want to solve the initial value problem of the equation above with \(\begin{equation}
-                \{t \mid t \in \mathbb{R}, t>0\}
+                \{t \mid t \in \mathbb{R}, t\geq 0\}
                 \end{equation}\) and \(\begin{equation}
                 \{x \mid x \in \mathbb{R}\}
                 \end{equation}\). Consider that we are seeking for solution in the form of the following: </p>
@@ -342,9 +342,9 @@
             </div>
             <p class="hText">Therefore</p>
             <div class="inner2MF">
-                <p class="hText">\[
-                    \frac{\partial}{\partial t} u(x,t) = k \frac{\partial^2}{\partial x^2} u(x,t) = \Psi(x) \frac{d}{dt}
-                    \varphi(t) = k \varphi(t) \frac{d^2}{dx^2} \Psi(x)
+                <p class="hText">\[\left[
+                    \frac{\partial}{\partial t} u(x,t) = k \frac{\partial^2}{\partial x^2} u(x,t)\right] = \left[\Psi(x) \frac{d}{dt}
+                    \varphi(t) = k \varphi(t) \frac{d^2}{dx^2} \Psi(x) \right]
                     \]
                 </p>
             </div>
@@ -359,16 +359,16 @@
                 definition:</p>
             <div class="inner2MF">
                 <p class="hText">\[
-                    -\lambda = \frac{1}{k} \varphi(t) \frac{d}{dt} \varphi(t) = \frac{1}{\psi(x)} \frac{d^2}{dx^2} \Psi(x),
+                    -\lambda = \frac{1}{k\varphi(t)}  \frac{d}{dt} \varphi(t) = \frac{1}{\Psi(x)} \frac{d^2}{dx^2} \Psi(x),
                     \quad \lambda > 0
                     \]
                 </p>
             </div>
             <p class="hText" style="font-weight: bold; color: white;">Solving for \(\Psi(x)\)</p>
-            <p class="hText">Note that from the equation \(-\lambda = k\frac{1}{\Psi(x)} \frac{d}{dx^2} \Psi(x)\) we may
+            <p class="hText">Note that from the equation \(-\lambda = \frac{1}{\Psi(x)} \frac{d^2}{dx^2} \Psi(x)\) we may
                 determine the following:</p>
             <div class="inner2MF">
-                <p class="hText">\[\Rightarrow \frac{d^2}{d x^2} \Psi(x)-\lambda \Psi(x)=\frac{d^2}{d x^2} \Psi(x)+(0)
+                <p class="hText">\[\Rightarrow \frac{d^2}{d x^2} \Psi(x)+\lambda \Psi(x)=\frac{d^2}{d x^2} \Psi(x)+(0)
                     \frac{d}{d x} \Psi(x)+\lambda \Psi(x)=0 \]</p>
             </div>
             <p class="hText" style="margin-top: 40px;">We recall again our understanding on Ordinary Differential
@@ -390,11 +390,11 @@
             </div>
             <p class="hText">Solving the above differential equation results the following:</p>
             <div class="inner2MF">
-                <p class="hText">\[\varphi(t)=\exp \left(-\lambda k t+\alpha_2\right)=\exp \left(\alpha_2\right) \exp
+                <p class="hText">\[\varphi(t)=\exp \left(-\lambda k t+a_2\right)=\exp \left(a_2\right) \exp
                     (-\lambda k t)=a_3 \exp (-\lambda k t)\]</p>
             </div>
 
-            <p class="hText" style="font-weight: bold; color: white; margin-top: 40px;">Solving for heat equation \(u(x,t)\)</p>
+            <p class="hText" style="font-weight: bold; color: white; margin-top: 40px;">Solving for heat equation \(u(x,t)\) results</p>
             <p class="hText">\[u(x,t) = Re[\Psi(x)]\varphi(t)\]</p>
             <p class="hText">\[u(x,t) = Re[\Psi(x)]\varphi(t) = a_3exp(-\lambda kt)[a_1cos(\sqrt{\lambda}x) + a_2sin(\sqrt{\lambda}x)]\]</p>
             <p class="hText" style="font-weight: bold; color: white; margin-top: 40px;">We assume the following conditions exist</p>
@@ -413,9 +413,9 @@
             <div class="hText">
                 <p >The numerical technique that we will be using to estimate the actual solution of a given problem in heat transfer will be based on the following: </p>
                 <p>Consider the Taylor Series expansion about \(t = t_j\) and holding \(x\) fixed</p>
-                <p>\[u(x_i,t_j + \Delta t) = \sum_{l=0}^nc_l[(t_j + \Delta t) - t_j]^l + \frac{[(t_j + \Delta t)]^{l+1}}{(l+1)!}\frac{\partial^{l+1}}{\partial t^l} u(x_i,t_{\lambda})\]</p>
-                <p>\[= \sum_{l=0}^n c_l (\Delta t)^l + \frac{(\Delta t)^{l+1}}{(l+1)!} \frac{\partial^{l+1}}{\partial t^l} u(x_i,t_\lambda), \text{where } c_l = \frac{1}{l!} \frac{\partial^l}{\partial t^l} u(x_i,t_j)\]</p>
-                <p>\[= \sum_{l=0}^n \frac{\Delta t^l}{l!}\frac{\partial^l}{\partial t^l}u(x_i,t_j) + \frac{\Delta t^{n+1}}{(n+1)!}\frac{\partial^{n+1}}{\partial t^{n+1}}u(x_i,t_\lambda),\; t_{\lambda} \in [t_j,t_{j+1}]\]</p>
+                <p>\[u(x_i,t_j + \Delta t) = \sum_{l=0}^nc_l[(t_j + \Delta t) - t_j]^l + \frac{[(t_j + \Delta t) - t_j]^{n+1}}{(n+1)!}\frac{\partial^{n+1}}{\partial t^n} u(x_i,t_{\lambda})\]</p>
+                <p>\[= \sum_{l=0}^n c_l (\Delta t)^l + \frac{(\Delta t)^{n+1}}{(n+1)!} \frac{\partial^{n+1}}{\partial t^n} u(x_i,t_\lambda), \text{where } c_l = \frac{1}{l!} \frac{\partial^l}{\partial t^l} u(x_i,t_j)\]</p>
+                <p>\[= \sum_{l=0}^n \frac{(\Delta t)^l}{l!}\frac{\partial^l}{\partial t^l}u(x_i,t_j) + \frac{(\Delta t)^{n+1}}{(n+1)!}\frac{\partial^{n+1}}{\partial t^{n+1}}u(x_i,t_\lambda),\; t_{\lambda} \in [t_j,t_{j+1}]\]</p>
                 <p>Note that \(t_j + \Delta t = t_{j+1} \Rightarrow \Delta t = t_{j+1} - t_j\; for\; \forall j, \;j= 0,1,2,...\)</p>
                 <p>At \(n = 1\)</p>
                 <p>\[u(x_i,t_j + \Delta t) = u(x_i, t_{j+1}) = \sum_{l=0}^1\frac{(\Delta t)^l}{l!}\frac{\partial^l}{\partial t^l}u(x_i,t_j)+\frac{(\Delta t)^2}{(2)!}\frac{\partial^2}{\partial t^2}u(x_i,t_{\lambda})\]</p>
@@ -442,19 +442,19 @@
 
         <div id="mathFormula">
             <h1 class="hMath">Example 1</h1>
-            <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
+            <p class="hText">Consider there is a parabolic equation  </p>
 
             <div id="math2Formula">
                 <div class="inner2MF">
-                    <p class="hText">\[\frac{du}{dt}-\frac{4}{\pi^2}\frac{d^2u}{dx^2}=0,\; 0\leq x \leq 4, \; 0\leq t\]
+                    <p class="hText">\[\frac{\partial u}{\partial t}-\frac{4}{\pi^2}\frac{\partial^2u}{\partial x^2}=0,\; 0\leq x \leq 4, \; t\geq 0\]
                     </p>
                     <p class="hText">
-                        \[u(0,t)=u(4,t)=0,\quad 0\leq x \leq1\]
+                        \[u(0,t)=u(4,t)=0,\quad t \geq 0\]
                     </p>
                 </div>
             </div>
             <div class="hText">
-                <p>For example, given that the uniform space step \(h\) = 0.2 and uniform time step \(\Delta t\) = 0.04,
+                <p>For example, given that the uniform spatial step \(\Delta x\) = 0.2 and uniform time step \(\Delta t\) = 0.04,
                     and we have
                     to compare \(t\) = 0.4 to the actual solution which is: </p>
                 <p>\[u(x,t) = e^{-t}sin\left({\frac{\pi x}{2}}\right) + e^{\frac{-t}{4}}sin\left(\frac{\pi
@@ -463,10 +463,10 @@
                     setting up the
                     spatial grid and time steps.</p>
                 <p>Therefore, we have arrived at the following information:</p>
-                <p>\[x_i = ih = 0.2i,\; 0\leq i \leq 20\]</p>
-                <p>Therefore, the total time step that should be calculated is</p>
+                <p>\[x_i = i\Delta x = 0.2i,\; 0\leq i \leq 20\]</p>
+                <p>Therefore, the total time step (total time iteration) that should be calculated is</p>
                 <p>\[j = \frac{t}{\Delta t}=\frac{0.4}{0.04}=10\]</p>
-                <p>Which means that we have 10 time steps to compute</p>
+                
                 <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
                     any
                     specific time \(j+1\) where the following algorithm applies</p>
@@ -475,30 +475,30 @@
                 <p>\[u_i^{j+1} = u_i^j + 0.405284735 (u_{i-1}^j - 2u_i^j +u_{i+1}^j)\]</p>
                 <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
                 <p>\[u(x,0) = sin\left(\frac{\pi x}{4}\right)\left(1+2cos\left(\frac{\pi x}{4}\right)\right)\]</p>
-                <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
-                <p>\[x_1 =0.2, \qquad u_1(0) = sin\left(\frac{\pi (0.2)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>For \(x_0 = 0, \; u_0^0 =0\)</p>
+                <p>\[x_1 =0.2, \qquad u_1^0 = sin\left(\frac{\pi (0.2)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (0.2)}{4}\right)\right) = 0.465451459\]</p>
-                <p>\[x_2 =0.4, \qquad u_2(0) = sin\left(\frac{\pi (0.4)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>\[x_2 =0.4, \qquad u_2^0 = sin\left(\frac{\pi (0.4)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (0.4)}{4}\right)\right) = 0.896802247\]</p>
-                <p>\[x_3 =0.6, \qquad u_3(0) = sin\left(\frac{\pi (0.6)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>\[x_3 =0.6, \qquad u_3^0 = sin\left(\frac{\pi (0.6)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (0.6)}{4}\right)\right) = 1.263007494\]</p>
-                <p>\[x_4 =0.8, \qquad u_4(0) = sin\left(\frac{\pi (0.8)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>\[x_4 =0.8, \qquad u_4^0 = sin\left(\frac{\pi (0.8)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (0.8)}{4}\right)\right) = 1.538841769\]</p>
-                <p>\[x_5 =1.0, \qquad u_5(0) = sin\left(\frac{\pi (1.0)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>\[x_5 =1.0, \qquad u_5^0 = sin\left(\frac{\pi (1.0)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (1.0)}{4}\right)\right) = 1.707106781\]</p>
                 <p>\[.\]</p>
                 <p>\[.\]</p>
                 <p>\[.\]</p>
                 <p>\[.\]</p>
-                <p>\[x_{18} =3.6, \qquad u_18(0) = sin\left(\frac{\pi (3.6)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>\[x_{18} =3.6, \qquad u_{18}^0 = sin\left(\frac{\pi (3.6)}{4}\right)\left(1+2cos\left(\frac{\pi
                     (3.6)}{4}\right)\right) = -0.278768258\]</p>
-                <p>\[x_{19} =3.8, \qquad u_19(0) = sin\left(\frac{\pi (3.8)}{4}\right)\left(1+2cos\left(\frac{\pi
+                <p>\[x_{19} =3.8, \qquad u_{19}^0 = sin\left(\frac{\pi (3.8)}{4}\right)\left(1+2cos\left(\frac{\pi
                         (3.8)}{4}\right)\right) = -0.152582529\]</p>
                 <p>\[u(x_{20},0) =0\]</p>
-                <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
+                <p>After we have done computing for spatial grid points, we can start to apply the numerical algorithm for each
                     time step. For each time step, we update the temperature at each interior grid points
-                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition \(u_0^j = u_{20}^j = 0\) for all time steps.</p>
-                <p>To compute \(n\) = for \(i = 1,2,3,4,....,18,19\)</p>
+                    \(x_1,x_2,x_3,x_4 ...,x_{19}\),while keeping the boundary condition \(u_0^j = u_{20}^j = 0\) for all time steps.</p>
+                <p>To compute \(j\) = 1 for \(i = 1,2,3,4,....,18,19\)</p>
                 <p>\[u_1^1 = u_1^0 + 0.405284735  (u_0^0 - 2u_1^0 + u_2^0)\]</p>
                 <p>\[u_1^1 = 0.465451459+ 0.405284735 (0.896802247- 2(0.465451459)+0)\]</p>
                 <p>\[u_1^1 = 0.451630978\]</p>
@@ -512,11 +512,11 @@
                 <p>\[u_{18}^1 = -0.258533408\]</p>
                 <p>\[u_{19}^1 = -0.141884309\]</p>
 
-                <p class="hText">We can have a table to conclude all the calculation as below:</p>
+                <p class="hText">The table below summarizes all the iterations:</p>
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr>
-                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(n = 2\)</td>
+                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(j = 2\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^2\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
                         </tr>
@@ -603,7 +603,7 @@
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr></tr>
-                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(n = 3\)</td>
+                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(j = 3\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^3\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
                         </tr>
@@ -692,7 +692,7 @@
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr></tr>
-                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(n = 9\)</td>
+                            <td rowspan="20" style="border: 1px solid white; padding: 10px; text-align: center;">\(j = 10\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
                             <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
                         </tr>
@@ -795,7 +795,7 @@
                 <p>\[u(3.6,0.4) = -0.114394098\]</p>
                 <p>\[u(3.8,0.4) = -0.065592528\]</p>
                 <p>\[u(4,0.4) = 0\]</p>
-                <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
+                <p>Lastly, we can compute the absolute error by applying the given theorem:</p>
                 <p>\[\text{Error}_i = |u_i^{10} - u(x_i,0.4)|\]</p>
                 <p>Here is the list of all \(u_i^{10},u(x_i,0.4)\) and the error:</p>
                
@@ -935,21 +935,20 @@
                         </tr>
                     </table>
                 </div>    
-
-
             </div>
+            <p class="hText">Click here to see how we solve it using python -> <a href="https://youtu.be/kMkhd12ZxEY" target="_blank" >Solving Example 1 using Python</a></p>
         </div>
 
         <div id="mathFormula">
             <h1 class="hMath">Example 2</h1>
-            <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
+            <p class="hText">Consider there is a parabolic equation </p>
 
             <div id="math2Formula">
                 <div class="inner2MF">
-                    <p class="hText">\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0, \quad 0 < x < \pi, \quad 0 < t;\]
+                    <p class="hText">\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0, \quad 0 \leq x \leq \pi, \quad t \geq 0;\]
                     </p>
                     <p class="hText">
-                        \[u(0,t) = u(\pi,t) = 0, \quad 0 < t,\]
+                        \[u(0,t) = u(\pi,t) = 0, \quad t \geq 0,\]
                     </p>
                     <p class="hText">
                         \[u(x,0) = \sin(x), \quad 0 \leq x \leq \pi.\]
@@ -957,7 +956,7 @@
                 </div>
             </div>
             <div class="hText">
-                <p>For example, given that the uniform space step \(h\) = \(\frac{\pi}{10}\) and uniform time step \(\Delta t\) = 0.05,
+                <p>For example, given that the uniform spatial step \(\Delta x\) = \(\frac{\pi}{10}\) and uniform time step \(\Delta t\) = 0.05,
                     and we have
                     to compare \(t\) = 0.5 to the actual solution which is: </p>
                 <p>\[u(x,t) = e^{-t}sin(x)\]</p>
@@ -966,9 +965,8 @@
                     spatial grid and time steps.</p>
                 <p>Therefore, we have arrived at the following information:</p>
                 <p>\[x_i = ih = \frac{\pi}{10}i,\; 0\leq i \leq 10\]</p>
-                <p>Therefore, the total time step that should be calculated is</p>
+                <p>Therefore, the total time step (total time iteration) that should be calculated is</p>
                 <p>\[j = \frac{t}{\Delta t}=\frac{0.5}{0.05}=10\]</p>
-                <p>Which means that we have 10 time steps to compute</p>
                 <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
                     any
                     specific time \(j+1\) where the following algorithm applies</p>
@@ -977,7 +975,7 @@
                 <p>\[u_i^{j+1} = u_i^j + \frac{5}{\pi^2}(u_{i+1}^j - 2u_i^j + u_{i-1}^j)\]</p>
                 <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
                 <p>\[u(x,0) = sin(x)\]</p>
-                <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
+                <p>For \(x_0 = 0, \; u_0^0 =0\)</p>
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr>
@@ -1039,9 +1037,9 @@
                 </div>
                 <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
                     time step. For each time step, we update the temperature at each interior grid points
-                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition \(u_0^j = u_{10}^j = 0\) for all time steps.</p>
-                <p>To compute \(n\) = for \(i = 1,2,3,4,....,9\)</p>
-                <p>When \(n = 9\)</p>
+                    \(x_1,x_2,x_3,x_4,...,x_9\),while keeping the boundary condition \(u_0^j = u_{10}^j = 0\) for all time steps.</p>
+                <p>To compute \(j\) = 1 for \(i = 1,2,3,4,....,9\)</p>
+                <p>When \(j = 10\)</p>
                 
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
@@ -1147,7 +1145,7 @@
                         </tr>
                     </table>
                 </div>
-                <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
+                <p>Lastly, we can compute the absolute error by applying the given theorem:</p>
                 <p>\[\text{Error}_i = |u_i^{10} - u(x_i,0.5)|\]</p>
                 <p>Here is the list of all \(u_i^{10},u(x_i,0.5)\) and the error:</p>
                
@@ -1233,14 +1231,14 @@
 
         <div id="mathFormula">
             <h1 class="hMath">Example 3</h1>
-            <p class="hText">Consider there is a parabolic equation that explains the heat equation. </p>
+            <p class="hText">Consider there is a parabolic equation </p>
 
             <div id="math2Formula">
                 <div class="inner2MF">
-                    <p class="hText">\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0, \quad 0 < x < 2, \quad 0 < t;\]
+                    <p class="hText">\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0, \quad 0 \leq x \leq 2, \quad t \geq 0;\]
                     </p>
                     <p class="hText">
-                        \[u(0,t) = u(2,t) = 0, \quad 0 < t,\]
+                        \[u(0,t) = u(2,t) = 0, \quad t \geq 0,\]
                     </p>
                     <p class="hText">
                         \[u(x,0) = \sin(2\pi x), \quad 0 \leq x \leq 2.\]
@@ -1248,18 +1246,17 @@
                 </div>
             </div>
             <div class="hText">
-                <p>For example, given that the uniform space step \(h\) = \(0.4\) and uniform time step \(\Delta t\) = 0.05,
+                <p>For example, given that the uniform spatial step \(\Delta x\) = \(0.4\) and uniform time step \(\Delta t\) = 0.05,
                     and we have
                     to compare \(t\) = 0.5 to the actual solution which is: </p>
                 <p>\[u(x,t) = e^{-4\pi^2 t}sin(2\pi x)\]</p>
                 <p>Firstly, we will use finite difference method to approximate the solution at discrete points by
                     setting up the
                     spatial grid and time steps.</p>
-                <p>Therefore, we have arrived at the following information:</p>
+                <p>Next, we have arrived at the following information:</p>
                 <p>\[x_i = ih = 0.4i,\; 0\leq i \leq 5\]</p>
-                <p>Therefore, the total time step that should be calculated is</p>
+                <p>Therefore, the total time step (total time iteration) that should be calculated is</p>
                 <p>\[j = \frac{t}{\Delta t}=\frac{0.5}{0.05}=10\]</p>
-                <p>Which means that we have 10 time steps to compute</p>
                 <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
                     any
                     specific time \(j+1\) where the following algorithm applies</p>
@@ -1268,7 +1265,7 @@
                 <p>\[u_i^{n+1} = u_i^n + 0.3125(u_{i+1}^n - 2u_i^n + u_{i-1}^n)\]</p>
                 <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points for:</p>
                 <p>\[u(x,0) = sin(2\pi x)\]</p>
-                <p>For \(x_0 = 0, \; u_0(0) =0\)</p>
+                <p>For \(x_0 = 0, \; u_0^0 =0\)</p>
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr>
@@ -1305,9 +1302,9 @@
                 </div>
                 <p>After we have done compute for spatial grid points, we can start to apply the update formula for each
                     time step. For each time step, we update the temperature at each interior grid points
-                    \(x_1,x_2,x_3,x_4\),while keeping the boundary condition \(u_0^j = u_{5}^j = 0\) for all time steps.</p>
-                <p>To compute \(n\) = for \(i = 1,2,3,4\)</p>
-                <p>When \(n = 4\)</p>
+                    \(x_1,x_2,x_3,x_4,x_5\),while keeping the boundary condition \(u_0^j = u_{5}^j = 0\) for all time steps.</p>
+                <p>To compute \(j\) = 1 \(\;\) for \(i = 1,2,3,4\)</p>
+                <p>When \(j = 5\)</p>
                 
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
@@ -1341,7 +1338,7 @@
 
                 <p>Then we can find the exact solution at \(t = 0.5\) by using:</p>
                 <p>\[u(x,t) = e^{-4\pi^2t}sin(2\pi x)\]</p>
-                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,4\), therefore</p>
+                <p>We compute the exact solution for each spatial point \(x_i\) for \(i = 0,1,2,3,4\), hence</p>
                 <div style="display: flex; justify-content: center;" class="hText">
                     <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
                         <tr>
@@ -1375,7 +1372,7 @@
                        
                     </table>
                 </div>
-                <p>Lastly, we can do the approximation error by applying the formula as follow:</p>
+                <p>Lastly, we can compute the absolute error by applying the given theorem:</p>
                 <p>\[\text{Error}_i = |u_i^{5} - u(x_i,0.5)|\]</p>
                 <p>Here is the list of all \(u_i^{5},u(x_i,0.5)\) and the error:</p>
                
