@@ -30,7 +30,7 @@
                     </div>
                     <h3>Frederick Chong Yew Shen</h3>
                     <p class="member-id">293228</p>
-                    <h3 style="margin-top: 20px;">Software Scientist and Engineer</h3>
+                    <p style="margin-top: 20px;" class="hText">Software Scientist and Engineer</p>
                 </div>
 
                 <div class="team-card">
@@ -39,7 +39,7 @@
                     </div>
                     <h3>Norman Mohammad Bin Sumar</h3>
                     <p class="member-id">294807</p>
-                    <h3 style="margin-top: 20px;">Theoretical and Principal Scientist</h3>
+                    <p class = "hText" style="margin-top: 20px;">Theoretical and Principal Scientist and Engineer</p>
                 </div>
 
                 <div class="team-card">
@@ -48,7 +48,7 @@
                     </div>
                     <h3>Alban Heng Yu Cheng</h3>
                     <p class="member-id">291958</p>
-                    <h3 style="margin-top: 20px;">Research Scientist and Engineer</h3>
+                    <p class = "hText" style="margin-top: 20px;">Research Scientist and Engineer</p>
                 </div>
 
                 <div class="team-card">
@@ -57,7 +57,7 @@
                     </div>
                     <h3>Kee Chin Yuan</h3>
                     <p class="member-id">294093</p>
-                    <h3 style="margin-top: 40px;">Systems Scientist and Engineer</h3>
+                    <p class = "hText" style="margin-top: 40px;">Systems Scientist and Engineer</p>
                 </div>
             </div>
         </section>
@@ -1429,6 +1429,206 @@
                 </div>   
             </div>
         </div>
+
+
+
+        <div id="mathFormula">
+            <h1 class="hMath">The Applications</h1>
+            <p class="hText">The temperature \(u\)(\(x\), \(t\)) of a long, thin rod of constant cross section and homogeneous conducting material is governed by the one-dimensional heat equation. If heat is generated in the material, for example, by resistance to current or nuclear reaction, the heat equation becomes</p>
+
+            <div id="math2Formula">
+                <div class="inner2MF">
+                    <p class="hText">\[\frac{\partial^2 u}{\partial x^2} + \frac{kr}{\rho C} = k\frac{\partial u}{\partial t}, \quad 0 \leq x \leq l, \quad 0 < t;\]</p>
+            </div>
+
+            <div class="hText">
+                <p>Where: </p>
+                <ol class="hText">
+                    <li style="margin-top: 5px;">\(l\) = \(1.5\) \(cm\) is the length of the rod.</li>
+                    <li style="margin-top: 5px;">\(\rho = 10.6\;g\;cm^{-3}\) is the density.</li>
+                    <li style="margin-top: 5px;">\(C\) = \(0.056\) \(cal\) \(g^{-1}\) \(deg^{-1}\) is the specific heat.</li>
+                    <li style="margin-top: 5px;">\(k\) = \(1.04\) \(cal\) \(cm^{-1}\) \(deg^{-1}\) \(s^{-1}\) is the thermal diffusivity.</li>
+                    <li style="margin-top: 5px;">\(r(x, t, u)\) = \(5\) \(cal\) \(cm^{-3}\) \(s^{-1}\) is the constant function that explains the heat generated per unit volume.</li>
+                    <li style="margin-top: 5px;">If the ends of the rod are kept at \(0\) degree Celsius, then
+                        <div id="math2Formula">
+                            <div class="inner2MF">
+                                <p class="hText">\(u(0, t)\) = \(u(l, t)\) = \(0\), \(0 < t\) </p>
+                        </div>
+                    </li>
+                    <li style="margin-top: 5px;"> Suppose the initial temperature distribution is given by
+                        <div id="math2Formula">
+                            <div class="inner2MF">
+                                <p class="hText">\(u(x, 0)\) = \(sin\left(\frac{\pi x}{l}\right)\), \(0 \leq x \leq l\) </p>
+                        </div>
+                    </li>
+                </ol>
+
+                <p>Suppose that we have not known the exact solution of \(u(x, t)\), can we estimate the heat when time equals \(0.4\) seconds?.</p>
+                <p>According to what we have discussed earlier, begin from the given partial derivatives, we may determine the following:</p>
+                    
+                            <p class="hText">\[\frac{\partial^2 u}{\partial x^2} + \frac{kr}{\rho C} = k\frac{\partial u}{\partial t}\]
+                            </p>
+                            <p class="hText">\[\frac{\partial u}{\partial t} = k^{-1}\frac{\partial^2 u}{\partial x^2} + \frac{r}{\rho C}\]
+                            </p>
+                            <p class="hText">Where</p>
+                            <p class="hText">\[\frac{\partial}{\partial t}u(x_i,t_j) \approx \frac{u(x_i,t_{j+1})-u(x_i,t_j)}{(\Delta t)}\]
+                            </p>
+                            <p class="hText">\[\frac{\partial^2}{\partial x^2}u(x_i,t_j) \approx \frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2}\]
+                            </p>   
+                            <p class="hText">Therefore, the equation \[\frac{\partial u}{\partial t} = k^{-1}\frac{\partial^2 u}{\partial x^2} + \frac{r}{\rho C}\] becomes </p>
+                            <p class="hText">\[\frac{u(x_i,t_{j+1})-u(x_i,t_j)}{(\Delta t)} \approx k^{-1}\frac{u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)}{(\Delta x)^2} + \frac{r}{\rho C}\]</p>  
+                            <p class="hText">So</p>
+                            <p class="hText">\[u(x_i,t_{j+1}) \approx u(x_i,t_j) + \frac{(\Delta t) k^{-1} [u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)]}{(\Delta x)^2} + \frac{r \Delta t}{\rho C}\]</p>             
+                            <p class="hText">We will be using the uniform time and space steps of \(\Delta t = 0.04\) and \(\Delta x = 0.3\), then the stability criteria may also be determined as</p>
+                            <p class="hText">\[k\frac{\Delta t}{(\Delta x)^{2}} = 1.04 \times \frac{0.04}{(0.3)^2} = 0.462 \leq 0.5\] (within stability criteria)</p>
+                            <p class="hText">Then the algorithm \(u(x_i,t_{j+1})\) becomes </p>
+                            <p class="hText">\[u(x_i,t_{j+1}) \approx u(x_i,t_j) + 0.4274[u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)] + 0.3369\]</p>
+                            <p class="hText">With</p>
+                            <p class="hText">\[u(x, 0) = sin\left(\frac{\pi x}{l}\right), 0 \leq x \leq l\]</p>
+
+
+
+
+
+
+                <p>Therefore, the total time step that should be calculated is</p>
+                <p>\[j = \frac{t}{\Delta t}=\frac{0.4}{0.04}=10\]</p>
+                <p>Which means that we have 10 iterations to compute.</p>
+                <p>Now, we enter the realm of the numerical technique that we have chosen to approximate the solution at
+                    any
+                    specific time \(j+1\) where the following algorithm applies</p>
+                <p class="hText">\[u(x_i,t_{j+1}) \approx u(x_i,t_j) + 0.4274[u(x_{i+1},t_j) - 2u(x_i,t_j) + u(x_{i-1},t_j)] + 0.3369\]</p>
+                <p>\[u_i^{j+1} \approx u_i^j + 0.4274[u_{i+1}^j - 2u_i^j +u_{i-1}^j)] + 0.3369\]</p>
+                
+                
+                
+                <p>Futhermore, we need to compute \(u_i^0\) for all spatial grid points:</p>
+                <p class="hText">\[u(x, 0) = sin\left(\frac{\pi x}{l}\right), 0 \leq x \leq l\]</p>
+
+
+                
+                <p>For \(x_0 = 0, \; u_0(0, 0) =0\)</p>
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(i\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(x\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^0\)</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.587785252</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.6</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.951056516</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.9</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.951056516</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.587785252</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.5</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>After we have done computing the spatial grid points, we can start to apply the numerical algorithm for each
+                   time step. For each time step, we update the temperature at each interior grid points
+                    \(x_1,x_2,x_3,x_4,x_5\), while keeping the boundary condition \(u_0^j = u_{5}^j = 0\) for all time steps.</p>
+                <p>To compute \(n\) for \(i = 1,2,3,4\)</p>
+                <p>Estimating at time \(t = 0.04\) gives us</p>
+                
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{1}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.82872797</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.13269438</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.13269438</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">0.82872797</td>
+                        </tr>
+                    
+                    </table>
+                </div>
+
+                
+                    
+                
+
+                <p>The algorithm iterates until it reaches the final time step where we can estimate the heat for each spatial point</p>
+                                
+                <div style="display: flex; justify-content: center;" class="hText">
+                    <table class="calculation-table" style="border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">\(u_i^{10}\)</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">Value</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.42416119</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2.11825956</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">3</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">2.11825956</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">4</td>
+                            <td style="border: 1px solid white; padding: 10px; text-align: center;">1.42416119</td>
+                        </tr>
+                        
+                       
+                    </table>
+                </div>
+                   
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
     <div id="particles-js" class="particles"></div>
